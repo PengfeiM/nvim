@@ -5,4 +5,10 @@ if not status then
     return
 end
 
-lspsaga.setup({})
+lspsaga.setup({
+    ui = {
+        border = "rounded",
+        -- border = "shadow",
+        -- border = "double",
+    },
+})
