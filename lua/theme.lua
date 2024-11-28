@@ -3,6 +3,11 @@
     -- 主题选择
     -- vim.cmd.colorscheme("cyberdream")
     vim.cmd.colorscheme("dracula")
+    -- transparent background
+    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
 
 
     -- cyberdream 主题配置
@@ -26,7 +31,8 @@
             transparent_bg = true, -- default false
             -- 斜体注释
             italic_comment = true, -- default false
-
+            -- show the '~' characters after the end of buffers
+            show_end_of_buffer = true, -- default false
         })
     --}
 -- }
