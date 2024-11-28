@@ -45,6 +45,9 @@ require("plugins-config.fzf-lua")
 -- nvim-treesitter
 require("plugins-config.nvim-treesitter")
 
+-- rainbow
+require("plugins-config.rainbow")
+
 
 -- ------------------------------------------------------
 require("lsp.mason")

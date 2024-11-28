@@ -29,6 +29,9 @@
             lazy = false,
             priority = 1000,
         },
+        {
+            "HiPhish/rainbow-delimiters.nvim",
+        },
         -- =======================================================
 
 
