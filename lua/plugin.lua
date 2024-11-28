@@ -29,8 +29,14 @@
             lazy = false,
             priority = 1000,
         },
+
+        -- rainbow 括号
         {
             "HiPhish/rainbow-delimiters.nvim",
+        },
+        -- 行 git 状态
+        {
+            "lewis6991/gitsigns.nvim",
         },
         -- =======================================================
 

@@ -48,6 +48,9 @@ require("plugins-config.nvim-treesitter")
 -- rainbow
 require("plugins-config.rainbow")
 
+-- gitsigns
+require("plugins-config.gitsigns")
+
 
 -- ------------------------------------------------------
 require("lsp.mason")
