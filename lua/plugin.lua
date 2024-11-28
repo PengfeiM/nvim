@@ -112,6 +112,11 @@
             'hrsh7th/cmp-cmdline',
             'hrsh7th/nvim-cmp',
         },
+        -- 括号自动补全
+        {
+            "windwp/nvim-autopairs",
+            event = "InsertEnter",
+        },
         -- beauty 自动补全
         {
             "onsails/lspkind.nvim",
