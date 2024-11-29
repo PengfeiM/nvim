@@ -13,6 +13,21 @@
     vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })
     vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "none" })
 
+    -- =====================================================================
+    -- 自定义一些配色
+    -- ---------------------------------------------------------------------
+    -- 引用 dracula 颜色
+    local colors = require('dracula').colors()
+
+
+    -- nvim-tree 配置自定义
+    vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg=colors.purple, bold = true})
+    vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg=colors.purple, bold = true})
+    vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg=colors.cyan, bold = true})
+
+    -- =====================================================================
+
+
 
     -- cyberdream 主题配置
     -- {

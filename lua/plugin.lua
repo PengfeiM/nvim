@@ -29,6 +29,12 @@
             lazy = false,
             priority = 1000,
         },
+        {
+            -- NOTE: pre-downloaded, use it in the future
+            "catppuccin/nvim",
+            name = "catppuccin",
+            priority = 1000,
+        },
 
         -- rainbow 括号
         {
