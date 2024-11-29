@@ -27,5 +27,18 @@ nvim_tree.setup({
     },
     renderer = {
         group_empty = true,
+        hidden_display = "simple",
+        icons = {
+            web_devicons = {
+            file = {
+              enable = true,
+              color = true,
+            },
+            folder = {
+              enable = true,
+              color = true,
+            },
+          },
+        },
     },
 })

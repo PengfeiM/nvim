@@ -8,6 +8,10 @@
     vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
+    -- 设置 nvim-tree 透明背景
+    vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "none" })
 
 
     -- cyberdream 主题配置
