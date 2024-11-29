@@ -83,9 +83,13 @@
         },
 
 
-        -- nvim-treesitter: 语法插件
+        -- nvim-treesitter: 语法高亮插件
         {
             'nvim-treesitter/nvim-treesitter',
+        },
+        -- vim-illuminate: 语法高亮增强，自动高亮当前变量
+        {
+            "RRethy/vim-illuminate",
         },
 
 

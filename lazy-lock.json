@@ -23,5 +23,6 @@
   "nvim-treesitter": { "branch": "master", "commit": "8d4fdc5e47e2a4e00179e43f56221250ce365973" },
   "nvim-web-devicons": { "branch": "master", "commit": "edbe0a65cfacbbfff6a4a1e98ddd60c28c560509" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "d803ba7668ba390aa4cfd3580183c982cac36fd8" },
-  "tagbar": { "branch": "master", "commit": "5e090da54bf999c657608b6c8ec841ef968d923d" }
+  "tagbar": { "branch": "master", "commit": "5e090da54bf999c657608b6c8ec841ef968d923d" },
+  "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" }
 }
