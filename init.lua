@@ -49,6 +49,8 @@ require("plugins-config.fzf-lua")
 require("plugins-config.nvim-treesitter")
 -- vim-illuminate
 require("plugins-config.illuminate")
+-- todo-comments
+require("plugins-config.todo-comments")
 
 -- rainbow
 require("plugins-config.rainbow")

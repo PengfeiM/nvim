@@ -91,6 +91,11 @@
         {
             "RRethy/vim-illuminate",
         },
+        -- todo-comments: 特殊注释高亮搜索
+        {
+            "folke/todo-comments.nvim",
+            dependencies = { "nvim-lua/plenary.nvim" },
+        },
 
 
         -- ======================================================

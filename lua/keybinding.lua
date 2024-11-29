@@ -104,7 +104,8 @@ vim.keymap.set("n", "<Leader>a", ":FzfLua grep_cword<CR>", opt)
 vim.keymap.set("v", "<Leader>a", ":FzfLua grep_visual<CR>", opt)
 vim.keymap.set("n", "<Leader>A", ":FzfLua grep_project<CR>", opt)
 vim.keymap.set("n", "<Leader>h", ":FzfLua oldfiles<CR>", opt)
-vim.keymap.set("n", "<Leader>td", "<cmd>lua fzf_search_todo()<CR>", opt)
+-- vim.keymap.set("n", "<Leader>td", "<cmd>lua fzf_search_todo()<CR>", opt)
+vim.keymap.set("n", "<Leader>td", ":TodoFzfLua<CR>", opt)
 
 -- ================================================================
 
