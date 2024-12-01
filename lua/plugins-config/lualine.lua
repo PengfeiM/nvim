@@ -7,6 +7,11 @@ if not status then
 	return
 end
 
+
+-- 引入 venv 函数
+local lsp_venv = require('lsp.lsp_venv')
+
+
 lualine.setup({
   options = {
     icons_enabled = true,
@@ -32,9 +37,26 @@ lualine.setup({
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_x = {'encoding', 'fileformat'},
+    -- lualine_y = {'selectioncount', 'searchcount'},
+    lualine_y = {'filetype', lsp_venv.get_lsp_venv},
+    -- lualine_z = {'progress', 'location'}
+    lualine_z = {
+        'selectioncount',
+        'searchcount',
+        {
+        function()
+          local current_line = vim.fn.line('.')       -- 当前行
+          local total_lines = vim.fn.line('$')       -- 总行数
+          local current_col = vim.fn.col('.')        -- 当前列
+          local percent = math.floor((current_line / total_lines) * 100) -- 百分比
+
+          -- 格式化显示为：68% :677/994☰ ℅:3 %d%% 
+          return string.format("%2d%%%% :%d/%d☰ ℅:%d", percent, current_line, total_lines, current_col)
+        end,
+        -- icon = '📜' -- 可选图标，可以根据需要调整
+      }
+    }
   },
   inactive_sections = {
     lualine_a = {},
