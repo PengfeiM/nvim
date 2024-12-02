@@ -47,6 +47,8 @@ require("plugins-config.fzf-lua")
 
 -- nvim-treesitter
 require("plugins-config.nvim-treesitter")
+require("plugins-config.code-folding")      -- 复用 treesitter 能力的代码折叠
+
 -- vim-illuminate
 require("plugins-config.illuminate")
 -- todo-comments

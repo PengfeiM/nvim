@@ -1,16 +1,29 @@
 -- nvim-treesitter
 local status, nvim_treesitter = pcall(require, "nvim-treesitter")
 if not status then
-	vim.notify("没有找到 nvim-treesitter")
-	return
+    vim.notify("没有找到 nvim-treesitter")
+    return
 end
 
 
 -- 配置
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "markdown", "markdown_inline", "go", "python", "bash"},
+    ensure_installed = {
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "markdown",
+        "markdown_inline",
+        "go",
+        "gomod",
+        "gosum",
+        "python",
+        "bash",
+    },
 
+    -- 代码高亮模块
     highlight = {
         enable = true,
 
@@ -34,6 +47,35 @@ require'nvim-treesitter.configs'.setup {
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
     },
+
+    -- 启用增量选择模块
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "<CR>",
+            node_incremental = "<CR>",
+            node_decremental = "<BS>",
+            scope_incremental = "<TAB>",
+        },
+    },
+
+    indent = {
+        enable = true, -- 自动缩进
+    },
+    fold = {
+        enable = true, -- 启用折叠功能
+        disable = {},
+    },
+}
+
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.gotmpl = {
+    install_info = {
+        url = "https://github.com/ngalaiko/tree-sitter-go-template",
+        files = { "src/parser.c" },
+    },
+    filetype = "gotmpl",
+    used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml", "tpl" },
 }
 
 nvim_treesitter.setup({})
