@@ -130,6 +130,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 
+-- 引用 clangd.lua，配置 clangd
+-- TODO: move it to another file
+require('lsp.clangd')
+
+
 
 -- ========================================================================
 -- 自动化设置
