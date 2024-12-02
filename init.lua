@@ -58,6 +58,8 @@ require("plugins-config.rainbow")
 -- gitsigns
 require("plugins-config.gitsigns")
 
+-- indent blankline
+require("plugins-config.indent-blankline")
 
 -- ------------------------------------------------------
 require("lsp.mason")

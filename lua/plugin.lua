@@ -102,6 +102,8 @@
             "folke/todo-comments.nvim",
             dependencies = { "nvim-lua/plenary.nvim" },
         },
+        -- indent-blankline: 显示缩进
+        { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 
 
         -- ======================================================
