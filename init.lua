@@ -69,6 +69,8 @@ require("lsp.cmp")
 require("lsp.lspsaga")
 require("lsp.lspkind")
 require("lsp.nvim-autopairs")  -- 引用了 cmp，放在 cmp 后面
+require("lsp.none-ls")
+
 
 -- ======================================================
 
