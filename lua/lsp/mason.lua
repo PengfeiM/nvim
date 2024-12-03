@@ -135,6 +135,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 require('lsp.clangd')
 
 
+-- ltex-ls
+require("lsp.ltex-ls")
+
+
 
 -- ========================================================================
 -- 自动化设置
