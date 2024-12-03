@@ -34,7 +34,20 @@ lualine.setup({
         }
     },
     sections = {
-        lualine_a = { 'mode' },
+        lualine_a = {
+            'mode',
+            {
+                -- 显示 spell 检查状态
+                function()
+                    if vim.wo.spell then
+                        return '󰓆 '..vim.o.spelllang
+                    else
+                        return ''
+                    end
+                end,
+                color = { fg='#21222c'},
+            },
+        },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
             'filename',

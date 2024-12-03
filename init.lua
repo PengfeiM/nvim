@@ -10,6 +10,10 @@
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "UTF-8"
 
+-- spell check
+vim.opt.spell = true
+vim.opt.spelllang = "en"
+
 -- 光标停留时间设置
 vim.o.updatetime = 500 -- 将光标停留触发的时间设置为 500 毫秒
 
