@@ -108,6 +108,7 @@ vim.keymap.set("n", "<Leader>h", ":FzfLua oldfiles<CR>", opt)
 vim.keymap.set("n", "<Leader>td", ":TodoFzfLua<CR>", opt)
 
 -- ----------------------------------------------------------
+-- Gitsigns 快捷键
 pluginKeyBinding.gitSignsKeys = function(bufnr, gitsigns)
 
     local function map(mode, l, r, opts)
@@ -154,6 +155,18 @@ pluginKeyBinding.gitSignsKeys = function(bufnr, gitsigns)
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     --]]
 end
+-- ---------------------------------
+-- lazygit 快捷键
+pluginKeyBinding.lazyGitKeybinding = function ()
+    return {
+        vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>", opt)
+    }
+end
+-- pluginKeyBinding.lazyGitKeybinding = function ()
+--     -- 可以添加按键绑定
+--     vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>", opt)
+-- end
+
 -- ================================================================
 
 

@@ -41,10 +41,26 @@ require("lazy").setup({
     {
         "HiPhish/rainbow-delimiters.nvim",
     },
+    -- =======================================================
+
+
+    -- git
+    -- =======================================================
     -- 行 git 状态
     {
         "lewis6991/gitsigns.nvim",
     },
+
+    -- -----------------------------------
+    -- lazygit
+    {
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+
     -- =======================================================
 
 
@@ -127,8 +143,8 @@ require("lazy").setup({
     {
         'nvimdev/lspsaga.nvim',
         dependencies = {
-            'nvim-treesitter/nvim-treesitter',     -- optional
-            'nvim-tree/nvim-web-devicons',         -- optional
+            'nvim-treesitter/nvim-treesitter', -- optional
+            'nvim-tree/nvim-web-devicons',     -- optional
         }
     },
     -- 自动补全插件
@@ -181,7 +197,7 @@ require("lazy").setup({
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },     -- 仅在 markdown 文件中加载
+        ft = { "markdown" }, -- 仅在 markdown 文件中加载
         build = "cd app && yarn install",
         config = function()
             -- 仅在 md 文件中启用对应的快捷键

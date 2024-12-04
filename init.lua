@@ -61,12 +61,16 @@ require("plugins-config.todo-comments")
 -- rainbow
 require("plugins-config.rainbow")
 
--- gitsigns
-require("plugins-config.gitsigns")
 
 -- indent blankline
 require("plugins-config.indent-blankline")
 
+
+-- ------------------------------------------------------
+-- gitsigns
+require("plugins-config.gitsigns")
+-- lazygit
+require("plugins-config.lazygit")
 -- ------------------------------------------------------
 require("lsp.mason")
 require("lsp.cmp")
