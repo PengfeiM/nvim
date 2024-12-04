@@ -134,6 +134,9 @@ pluginKeyBinding.gitSignsKeys = function(bufnr, gitsigns)
       end
     end)
 
+    -- 添加自己的快捷键
+    map('n', '<leader>gb', gitsigns.blame, opt)
+
     --[[
     TODO: some action key binding, not use now
     -- Actions
@@ -159,7 +162,7 @@ end
 -- lazygit 快捷键
 pluginKeyBinding.lazyGitKeybinding = function ()
     return {
-        vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>", opt)
+        vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", opt)
     }
 end
 -- pluginKeyBinding.lazyGitKeybinding = function ()
