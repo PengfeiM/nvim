@@ -30,9 +30,9 @@
     -- , ctermbg = colors.bright_green
 
     -- illuminate 同变量高亮自定义
-    vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = colors.black, bg = colors.green, underline = true })
-    vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = colors.black, bg = colors.green, underline = true })
-    vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = colors.black, bg = colors.bright_green, bold = true })
+    vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = colors.nontext, underline = true })
+    vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = colors.nontext, underline = true })
+    vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = colors.visual, bold = true })
     -- =====================================================================
 
 
