@@ -25,6 +25,9 @@
     vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg=colors.purple, bold = true})
     vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg=colors.cyan, bold = true})
 
+    -- tagbar 颜色自定义
+    vim.api.nvim_set_hl(0, "TagbarHighlight", { fg=colors.menu, bg = colors.bright_green })
+    -- , ctermbg = colors.bright_green
     -- =====================================================================
 
 
