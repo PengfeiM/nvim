@@ -32,31 +32,32 @@ function LspKeybind(client, bufnr)
     end
     -- 绑定快捷键
     local opt = { noremap = true, silent = true }
-    -- rename
-    buf_set_keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename<CR>", opt)
-    -- code action
-    buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
-    -- go to definition
-    buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
-    -- 测试 goto 引用，放在 quickfix 中
-    -- vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
-    -- 找到接口实现，放在 quickfix 中
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-    -- open finder for definition and reference
-    buf_set_keymap("n", "gf", "<cmd>Lspsaga finder<CR>", opt)
-    -- show diagnostic in line
-    buf_set_keymap("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
-    -- show diagnostic in file
-    buf_set_keymap("n", "<leader>db", "<cmd>Lspsaga show_buf_diagnostics<CR>", opt)
-    -- show diagnostic in workspace
-    buf_set_keymap("n", "<leader>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", opt)
-    -- show hover
-    buf_set_keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
-    -- format
-    buf_set_keymap("n", "<leader>=", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
-    -- 不知道这里为什么会报错 invalid key buffer，先不用了
-    -- require("keybinding").lspKeybinding(buf_set_keymap)
+    -- -- rename
+    -- buf_set_keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename<CR>", opt)
+    -- -- code action
+    -- buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+    -- -- go to definition
+    -- buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+    -- -- 测试 goto 引用，放在 quickfix 中
+    -- -- vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+    -- buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
+    -- -- 找到接口实现，放在 quickfix 中
+    -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+    -- -- open finder for definition and reference
+    -- buf_set_keymap("n", "gf", "<cmd>Lspsaga finder<CR>", opt)
+    -- -- show diagnostic in line
+    -- buf_set_keymap("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+    -- -- show diagnostic in file
+    -- buf_set_keymap("n", "<leader>db", "<cmd>Lspsaga show_buf_diagnostics<CR>", opt)
+    -- -- show diagnostic in workspace
+    -- buf_set_keymap("n", "<leader>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", opt)
+    -- -- show hover
+    -- buf_set_keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+    -- -- format
+    -- buf_set_keymap("n", "<leader>=", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
+    -- --不知道这里为什么会报错 invalid key buffer，先不用了--
+    -- 已修复
+    require("keybinding").lspKeybinding(buf_set_keymap)
 end
 
 -- 配置 lua_ls，保证 lua 的语法支持

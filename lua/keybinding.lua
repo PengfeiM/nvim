@@ -135,7 +135,8 @@ pluginKeyBinding.gitSignsKeys = function(bufnr, gitsigns)
     end)
 
     -- 添加自己的快捷键
-    map('n', '<leader>gb', gitsigns.blame, opt)
+    map('n', '<leader>gb', gitsigns.blame)
+    -- vim.keymap.set('n', '<leader>gb', gitsigns.blame, opt)
 
     --[[
     TODO: some action key binding, not use now
