@@ -163,7 +163,7 @@ end
 -- lazygit 快捷键
 pluginKeyBinding.lazyGitKeybinding = function ()
     return {
-        vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", opt)
+        vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>", opt)
     }
 end
 -- pluginKeyBinding.lazyGitKeybinding = function ()
@@ -195,9 +195,21 @@ pluginKeyBinding.lspKeybinding = function(mapbuf)
  mapbuf("n", "gf", ":Lspsaga finder<CR>", opt)
  -- show hover
  mapbuf("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opt)
+    -- show diagnostic in line
+    mapbuf("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+    -- show diagnostic in file
+    mapbuf("n", "<leader>db", "<cmd>Lspsaga show_buf_diagnostics<CR>", opt)
+    -- show diagnostic in workspace
+    mapbuf("n", "<leader>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", opt)
  -- format
  mapbuf("n", "<leader>=", ":lua vim.lsp.buf.format { async = true }<CR>", opt)
 end
+
+-- Global, 不需要语言触发
+-- Lspsaga
+vim.keymap.set("n", "<Leader>tg", ":Lspsaga term_toggle<CR>", opt)
+
+
 -- ================================================================
 pluginKeyBinding.cmp = function(cmp)
  return {
