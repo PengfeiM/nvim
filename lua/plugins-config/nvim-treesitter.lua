@@ -19,6 +19,8 @@ require 'nvim-treesitter.configs'.setup {
         "go",
         "gomod",
         "gosum",
+        "gotmpl",
+        "gowork",
         "python",
         "bash",
     },

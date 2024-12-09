@@ -48,6 +48,13 @@ null_ls.setup({
 			extra_filetypes = { "njk" },
 			prefer_local = "node_modules/.bin",
 		}),
+        -- add some go functions, 
+        -- 1. gomodifytags
+        -- 2. go impl a interface
+        null_ls.builtins.code_actions.gomodifytags,
+        null_ls.builtins.code_actions.impl,
+        null_ls.builtins.formatting.goimports,
+        null_ls.builtins.formatting.gofumpt,
 	},
 	-- 保存自动格式化
 	-- on_attach = function(client)

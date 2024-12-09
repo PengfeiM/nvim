@@ -181,9 +181,10 @@ end
 -- lsp 快捷键设置
 pluginKeyBinding.lspKeybinding = function(mapbuf)
  -- rename
- mapbuf("n", "<leader>r", ":lua vim.lsp.buf.rename<CR>", opt)
+ -- mapbuf("n", "<leader>r", ":lua vim.lsp.buf.rename<CR>", opt)
+ mapbuf("n", "<leader>r", ":Lspsaga rename<CR>", opt)
  -- code action
- mapbuf("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", opt)
+ mapbuf("n", "<leader>ca", ":Lspsaga code_action<CR>", opt)
  -- go to definition
  mapbuf("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
  -- 测试 goto 引用，放在 quickfix 中
