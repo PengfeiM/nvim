@@ -10,6 +10,10 @@
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "UTF-8"
 
+
+--color
+vim.opt.termguicolors = true
+
 -- spell check
 -- vim.opt.spell = true
 -- vim.opt.spelllang = "en"
@@ -25,14 +29,21 @@ vim.o.updatetime = 500 -- 将光标停留触发的时间设置为 500 毫秒
 require("basic")
 require("plugin")
 require("theme")
+-- 全局变量
+-- 依赖lazy管理插件，需要放到插件后
+_G.nvim_notify = require("globalvars").nvim_notify
 -- 导入快捷键
 require("keybinding")
 -- ======================================================
+-- 我自己的功能
+require("filetypes")
 
 
 -- ======================================================
 -- 启动插件配置
 -- ------------------------------------------------------
+-- nvim-notify: 通知插件
+require("plugins-config.notify")
 
 -- nvim-tree: 目录插件启动
 require("plugins-config.nvim-tree")
@@ -59,7 +70,7 @@ require("plugins-config.illuminate")
 require("plugins-config.todo-comments")
 
 -- rainbow
-require("plugins-config.rainbow")
+-- require("plugins-config.rainbow")
 
 
 -- indent blankline

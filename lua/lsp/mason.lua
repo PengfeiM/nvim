@@ -122,16 +122,6 @@ nvim_lsp.gopls.setup({
     cmd = { "gopls" },
     settings = {
         gopls = {
-            -- analyses = {
-            --     unreachable = true,
-            --     unusedparams = true,
-            --     errcheck = true,
-            --     misspell = true,
-            -- },
-            -- staticcheck = true,
-            -- codelenses= {
-            --     generate= true -- 启用生成功能
-            -- },
             gofumpt = true,
             codelenses = {
                 gc_details = false,

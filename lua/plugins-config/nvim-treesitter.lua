@@ -10,19 +10,21 @@ end
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
     ensure_installed = {
+        "bash",
         "c",
-        "lua",
-        "vim",
-        "vimdoc",
-        "markdown",
-        "markdown_inline",
         "go",
         "gomod",
         "gosum",
         "gotmpl",
         "gowork",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "promql",
         "python",
-        "bash",
+        "sql",
+        "vim",
+        "vimdoc",
     },
 
     -- 代码高亮模块

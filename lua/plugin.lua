@@ -37,6 +37,11 @@ require("lazy").setup({
         priority = 1000,
     },
 
+    -- nvim-notify: 自定义通知插件
+    {
+        'rcarriga/nvim-notify',
+    },
+
     -- rainbow 括号
     {
         "HiPhish/rainbow-delimiters.nvim",

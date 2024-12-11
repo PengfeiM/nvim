@@ -41,7 +41,7 @@ lspsaga.setup({
         exec = "<CR>",
         mark = "x",
         confirm = "<CR>",
-        in_select = true,
+        in_select = false,
     },
     symbol_in_winbar = {
         enable = true,

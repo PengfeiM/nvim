@@ -17,7 +17,7 @@ cmp.setup({
         -- { name = "codeium" }, -- 需要安装 codeium.nvim
         { name = "nvim_lsp" },
         -- For vsnip users.
-        { name = "vsnip" },
+        -- { name = "vsnip" },
     }, {
         { name = "buffer" },
         { name = "path" },
