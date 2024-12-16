@@ -15,10 +15,14 @@ end
 -- BUG:
 -- ISSUE:
 -- NOTE:
+-- INFO:
 -- HACK:
 -- WARN:
+-- WARNING:
+-- XXX:
 -- PERF:
 -- TEST:
+-- FAILED:
 -- ====================================
 
 -- todo-comments 配置
