@@ -154,12 +154,18 @@ require("lazy").setup({
     },
     -- 自动补全插件
     {
+        "hrsh7th/vim-vsnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-vsnip",
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-cmdline',
         'hrsh7th/nvim-cmp',
+        "mortepau/codicons.nvim",
+    },
+    {
+        -- 常见片段
+        "rafamadriz/friendly-snippets",
     },
     -- 括号自动补全
     {
