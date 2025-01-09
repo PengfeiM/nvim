@@ -17,6 +17,7 @@ require 'nvim-treesitter.configs'.setup {
         "gosum",
         "gotmpl",
         "gowork",
+        "java",
         "lua",
         "markdown",
         "markdown_inline",

@@ -102,6 +102,11 @@ require("lazy").setup({
         'preservim/tagbar',
     },
 
+    -- nvim-ufo：代码折叠
+    -- {
+    --     'kevinhwang91/nvim-ufo',
+    --     dependencies = 'kevinhwang91/promise-async',
+    -- },
 
     -- fzf-lua：文件管理插件
     {
@@ -114,6 +119,7 @@ require("lazy").setup({
     -- nvim-treesitter: 语法高亮插件
     {
         'nvim-treesitter/nvim-treesitter',
+        'nvim-treesitter/nvim-treesitter-context',
     },
     -- vim-illuminate: 语法高亮增强，自动高亮当前变量
     {

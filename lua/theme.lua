@@ -4,7 +4,7 @@
     -- 自定义一些配色
     -- ---------------------------------------------------------------------
     -- 引用 dracula 颜色
-    -- local colors = require('dracula').colors()
+    local dracula_colors = require('dracula').colors()
 
     local custom_colors = {
         dark_cyan = "#4ACDDA",
@@ -27,12 +27,12 @@
         purple = "#bd5eff",
     }
     -- nvim-tree 配置自定义
-    -- vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg=colors.purple, bold = true})
-    -- vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg=colors.purple, bold = true})
-    -- vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg=colors.cyan, bold = true})
+    vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg=dracula_colors.purple, bold = true})
+    vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg=dracula_colors.purple, bold = true})
+    vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg=dracula_colors.cyan, bold = true})
 
     -- tagbar 颜色自定义
-    -- vim.api.nvim_set_hl(0, "TagbarHighlight", { fg=colors.menu, bg = colors.bright_green })
+    vim.api.nvim_set_hl(0, "TagbarHighlight", { fg=dracula_colors.menu, bg = dracula_colors.bright_green })
     -- , ctermbg = colors.bright_green
 
     -- illuminate 同变量高亮自定义
@@ -76,5 +76,5 @@
     --}
 -- }
 -- 主题选择
-vim.cmd.colorscheme("cyberdream")
--- vim.cmd.colorscheme("dracula")
+-- vim.cmd.colorscheme("cyberdream")
+vim.cmd.colorscheme("dracula")

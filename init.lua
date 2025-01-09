@@ -57,6 +57,9 @@ require("plugins-config.bufferline")
 -- tagbar：配置
 require("plugins-config.tagbar")
 
+-- nvim-ufo: 配置
+-- require("plugins-config.ufo")
+
 -- fzf-lua: 配置
 require("plugins-config.fzf-lua")
 
