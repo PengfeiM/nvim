@@ -101,8 +101,9 @@ nvim_lsp.pylsp.setup({
                     enabled = true,     -- bool[true, false], default true
                 },
                 jedi = {
-                    auto_import_modules = {"json", "os", "requests"},
-                    environment = "./venv/bin/python",
+                    auto_import_modules = {"json", "os", "requests", "sys", "subprocess"},
+                    -- environment = "./venv/bin/python",
+                    environment = (vim.fn.isdirectory("./venv/bin") == 1 and "./venv/bin/python") or vim.fn.exepath("python3"),
                 },
                 pycodestyle = {
                     ignore = { 'W391', 'E501' },
