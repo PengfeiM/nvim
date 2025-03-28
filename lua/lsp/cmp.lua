@@ -25,6 +25,8 @@ cmp.setup({
         { name = "nvim_lsp" },
         -- For vsnip users.
         { name = "vsnip" },
+        -- for markdown.
+        { name = 'render-markdown' },
     }, {
         { name = "buffer" },
         { name = "path" },

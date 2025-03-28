@@ -1,14 +1,24 @@
 local status, tagbar = pcall(require, "tagbar")
 if not status then
-	vim.notify("没有找到 tagbar 或者 nvim lua 加载 tagbar 失败，使用 vim 格式配置")
+    -- vim.notify("没有找到 tagbar 或者 nvim lua 加载 tagbar 失败，使用 vim 格式配置")
+    nvim_notify("没有找到 tagbar 或者 nvim lua 加载 tagbar 失败，使用 vim 格式配置", vim.log.levels.WARN, {
+        title = "tagbar",
+    })
     vim.cmd([[
-        let g:tagbar_width = max([30, winwidth(0)/8]) 
+        let g:tagbar_width = max([30, winwidth(0)/8])
         let g:tagbar_autofocus = 1
         let g:tagbar_autoclose = 0
         let g:tagbar_show_tag_linenumbers = 2
         let g:tagbar_show_tag_count = 1
+        let g:tagbar_type_markdown = {
+            \ 'ctagstype' : 'Markdown',
+            \ 'kinds' : [
+            \ 'h:headings'
+        \ ],
+        \ 'sort': 0
+        \ }
     ]])
-	return
+    return
 end
 
 
@@ -30,7 +40,7 @@ tagbar.setup({
 
     -- 显示 tag 下子 tag 数量
     tagbar_show_tag_count = true,
-    
+
     -- 自动 wrap 过长的 tag
     tagbar_wrap = 1
 })
