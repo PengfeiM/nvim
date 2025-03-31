@@ -1,4 +1,5 @@
 {
+  "aerial.nvim": { "branch": "master", "commit": "9ebc13583cff447f5493a63e99dfca526b3c3088" },
   "bufdelete.nvim": { "branch": "master", "commit": "f6bcea78afb3060b198125256f897040538bcb81" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "5b5e3aef9ad7af84f463d17b5479f06b87d5c429" },
@@ -36,7 +37,6 @@
   "prettier.nvim": { "branch": "main", "commit": "d98e732cb73690b07c00c839c924be1d1d9ac5c2" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "de39919a57e1a40a4c7dc5bae0de276f9c616ef3" },
   "render-markdown.nvim": { "branch": "main", "commit": "5dcadc76aca61156ff5156cd2d0339e5fbe741c3" },
-  "tagbar": { "branch": "master", "commit": "8de7694c0aeda253073098bbc9fb890b2902ddb8" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "vim-illuminate": { "branch": "master", "commit": "19cb21f513fc2b02f0c66be70107741e837516a1" },
   "vim-vsnip": { "branch": "master", "commit": "b7445b3c43acb08c0b74350d046e0088ece88033" }

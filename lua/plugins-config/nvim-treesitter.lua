@@ -18,14 +18,17 @@ require 'nvim-treesitter.configs'.setup {
         "gotmpl",
         "gowork",
         "java",
+        "json",
         "lua",
         "markdown",
         "markdown_inline",
         "promql",
         "python",
         "sql",
+        "toml",
         "vim",
         "vimdoc",
+        "yaml",
     },
 
     -- 代码高亮模块

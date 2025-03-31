@@ -98,8 +98,18 @@ require("lazy").setup({
     },
 
     -- tagbar：代码大纲查看
+    -- {
+    --     'preservim/tagbar',
+    -- },
+    -- aerial: 代替 tagbar 的大纲
     {
-        'preservim/tagbar',
+        'stevearc/aerial.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons"
+        },
     },
 
     -- nvim-ufo：代码折叠

@@ -55,7 +55,9 @@ require("plugins-config.lualine")
 require("plugins-config.bufferline")
 
 -- tagbar：配置
-require("plugins-config.tagbar")
+-- use aerial 
+-- require("plugins-config.tagbar")
+require("plugins-config.aerial")
 
 -- nvim-ufo: 配置
 -- require("plugins-config.ufo")
