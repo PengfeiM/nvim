@@ -8,17 +8,24 @@ if not status then
 end
 
 aerial.setup({
+    -- Priority list of preferred backends for aerial.
+    -- This can be a filetype map (see :help aerial-filetype-map)
+    backends = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+
     filter_kind = {
         "Class",
         "Constant",
         "Constructor",
         "Enum",
+        "EnumMember",
         "Field",
         "Function",
         "Interface",
         "Module",
         "Method",
         "Package",
+        "Property",
         "Struct",
-    }
+        -- "Variable",
+    },
 })
