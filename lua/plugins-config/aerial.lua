@@ -10,7 +10,14 @@ end
 aerial.setup({
     -- Priority list of preferred backends for aerial.
     -- This can be a filetype map (see :help aerial-filetype-map)
-    backends = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+    -- backends = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+    -- backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" }, -- default
+    backends = {
+        -- ['_'] = { "treesitter", "lsp", "markdown", "asciidoc", "man" }, -- default
+        go = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+        c = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+        cpp = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+    },
 
     filter_kind = {
         "Class",
