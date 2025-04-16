@@ -3,8 +3,15 @@
 -- 设置折叠方式为 Treesitter
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.api.nvim_create_autocmd("FileType", {
+    -- use indent as folding method in python
+    pattern = { "python" },
+    callback = function()
+        vim.opt_local.foldmethod = "indent"
+    end,
+})
 
 -- 设置折叠默认展开级别
-vim.o.foldlevel = 99       -- 默认折叠级别（展开所有）
-vim.o.foldlevelstart = 99  -- 启动时展开所有折叠
-vim.o.foldenable = true    -- 启用折叠
+vim.o.foldlevel = 99      -- 默认折叠级别（展开所有）
+vim.o.foldlevelstart = 99 -- 启动时展开所有折叠
+vim.o.foldenable = true   -- 启用折叠
