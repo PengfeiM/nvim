@@ -74,7 +74,18 @@
             show_end_of_buffer = true, -- default false
         })
     --}
+    -- catppuccin config
+    --{
+        require("catppuccin").setup({
+            flavour = "auto", -- latte, frappe, macchiato, mocha
+            transparent_background = true, -- enables setting the background color.
+        })
+    --} 
 -- }
 -- 主题选择
 -- vim.cmd.colorscheme("cyberdream")
-vim.cmd.colorscheme("dracula")
+-- read from conf: ~/.config/nvim/conf/config.lua
+local home = os.getenv("HOME")
+local config_path = home.."/.config/nvim/conf/config.lua"
+local config = dofile(config_path)
+vim.cmd.colorscheme(config.theme)
