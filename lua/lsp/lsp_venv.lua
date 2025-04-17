@@ -1,7 +1,8 @@
 -- 获取 Python 虚拟环境名称和版本的方法，带有 fallback 逻辑
 local function get_lsp_venv()
     -- 尝试从 LSP 获取虚拟环境路径
-    local clients = vim.lsp.get_active_clients()
+    -- local clients = vim.lsp.get_active_clients()
+    local clients = vim.lsp.get_clients()
     for _, client in ipairs(clients) do
         if client.name == "pyright" or client.name == "pylsp" then
             -- 获取 Python 环境的路径
