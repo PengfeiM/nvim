@@ -15,8 +15,8 @@ local lsp_venv = require('lsp.lsp_venv')
 lualine.setup({
     options = {
         icons_enabled = true,
-        --theme = 'auto',
-        theme = 'dracula',
+        theme = 'auto',
+        -- theme = 'dracula',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {

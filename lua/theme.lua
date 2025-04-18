@@ -74,7 +74,28 @@
             show_end_of_buffer = true, -- default false
         })
     --}
+
+    -- catppuccin 主题配置
+    -- {
+        require("catppuccin").setup({
+            flavour = "auto", -- latte, frappe, macchiato, mocha
+            transparent_background = true, -- enables setting the background color.        })
+        })
+    --}
 -- }
 -- 主题选择
 -- vim.cmd.colorscheme("cyberdream")
-vim.cmd.colorscheme("dracula")
+-- vim.cmd.colorscheme("dracula")
+-- read from conf: ~/.config/nvim/conf/config.lua
+local home = os.getenv("HOME")
+local config_path = home.."/.config/nvim/conf/config.lua"
+-- try read conf
+local ok, config = pcall(dofile, config_path)
+if ok and config and config.theme then
+    -- 成功读取配置文件且有主题设置
+    vim.cmd.colorscheme(config.theme)
+else
+    -- 读取失败或没有主题设置，使用回退主题
+    vim.notify("Failed to load theme from config, falling back to 'dracula'", vim.log.levels.WARN)
+    vim.cmd.colorscheme("dracula")
+end
