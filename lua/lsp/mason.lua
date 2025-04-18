@@ -22,7 +22,19 @@ end
 
 
 mason.setup({})
-mason_lspconfig.setup({})
+mason_lspconfig.setup({
+        ensure_installed = {
+        "lua_ls",       -- Lua
+        -- "pyright",      -- Python
+        "pylsp", --Python
+        -- "rust_analyzer",-- Rust
+        "gopls",        -- Go
+        -- "tsserver",     -- JavaScript/TypeScript
+        -- "clangd",       -- C/C++ installed by apt
+        -- 添加你需要的其他 LSP
+        "ltex",  -- text
+    }
+})
 
 
 -- 定义快捷键函数

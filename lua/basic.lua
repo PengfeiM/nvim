@@ -18,6 +18,10 @@
     vim.wo.signcolumn = "yes"
     -- 右侧参考线
     vim.wo.colorcolumn = "120"
+
+    -- guicursor
+    -- 所有模式都使用下划线光标（hor20 表示高度 20% 的下划线）
+    vim.opt.guicursor = "a:hor20"
 -- }
 
 
