@@ -18,6 +18,9 @@
     vim.wo.signcolumn = "yes"
     -- 右侧参考线
     vim.wo.colorcolumn = "120"
+
+    -- use _ as cursor in all mode
+    vim.opt.guicursor = "a:hor20"
 -- }
 
 
