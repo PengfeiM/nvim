@@ -28,7 +28,7 @@ mason_lspconfig.setup({
         -- "pyright",      -- Python
         "pylsp", --Python
         -- "rust_analyzer",-- Rust
-        "gopls",        -- Go
+        -- "gopls",        -- Go
         -- "tsserver",     -- JavaScript/TypeScript
         -- "clangd",       -- C/C++ installed by apt
         -- 添加你需要的其他 LSP
@@ -159,7 +159,7 @@ nvim_lsp.gopls.setup({
                 unreachable = true,
                 errcheck = true,
                 misspell = true,
-                fieldalignment = true,
+                -- fieldalignment = true,
                 nilness = true,
                 unusedparams = true,
                 unusedwrite = true,
