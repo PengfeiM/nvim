@@ -205,6 +205,11 @@ require('lsp.clangd')
 -- ltex-ls
 require("lsp.ltex-ls")
 
+-- confs lsp
+--   1. toml
+--   2. yaml
+--   3. json
+require("lsp.conf_file")
 
 
 -- ========================================================================
