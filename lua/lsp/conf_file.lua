@@ -23,10 +23,14 @@ nvim_lsp.yamlls.setup({
     on_attach = utils.ConfLspKeybind,
     settings = {
         yaml = {
-            schemas = {
-                kubernetes = "/*.yaml",
-                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
-            }
+            validate = true,
+            format = {
+                enable = true,
+            },
+            -- schemas = {
+            --     kubernetes = "/*.yaml",
+            --     ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+            -- }
         }
     },
 })
