@@ -191,7 +191,8 @@ require('lsp.clangd')
 
 
 -- ltex-ls
-require("lsp.ltex-ls")
+-- require("lsp.ltex-ls")
+-- java use huge mem, not so useful, disable it 
 
 -- confs lsp
 --   1. toml
