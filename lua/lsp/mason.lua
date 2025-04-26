@@ -203,7 +203,8 @@ require('lsp.clangd')
 
 
 -- ltex-ls
-require("lsp.ltex-ls")
+-- no java, nouse
+-- require("lsp.ltex-ls")
 
 -- confs lsp
 --   1. toml
