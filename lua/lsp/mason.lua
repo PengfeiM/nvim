@@ -147,7 +147,7 @@ nvim_lsp.gopls.setup({
                 unreachable = true,
                 errcheck = true,
                 misspell = true,
-                fieldalignment = true,
+                -- fieldalignment = true,
                 nilness = true,
                 unusedparams = true,
                 unusedwrite = true,
