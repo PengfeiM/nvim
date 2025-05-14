@@ -36,6 +36,13 @@ require("lazy").setup({
         name = "catppuccin",
         priority = 1000,
     },
+    {
+        -- tokyonight
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
 
     -- nvim-notify: 自定义通知插件
     {
