@@ -22,7 +22,10 @@ end
 
 
 mason.setup({})
-mason_lspconfig.setup({})
+mason_lspconfig.setup({
+    -- FIXME: disable auto-enable, mason-lspconfig has a bug, do not update mason now
+    automatic_enable = false,
+})
 
 
 -- 定义快捷键函数

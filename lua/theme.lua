@@ -27,12 +27,12 @@
         purple = "#bd5eff",
     }
     -- nvim-tree 配置自定义
-    vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg=dracula_colors.purple, bold = true})
-    vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg=dracula_colors.purple, bold = true})
-    vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg=dracula_colors.cyan, bold = true})
+    -- vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg=dracula_colors.purple, bold = true})
+    -- vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg=dracula_colors.purple, bold = true})
+    -- vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg=dracula_colors.cyan, bold = true})
 
     -- tagbar 颜色自定义
-    vim.api.nvim_set_hl(0, "TagbarHighlight", { fg=dracula_colors.menu, bg = dracula_colors.bright_green })
+    -- vim.api.nvim_set_hl(0, "TagbarHighlight", { fg=dracula_colors.menu, bg = dracula_colors.bright_green })
     -- , ctermbg = colors.bright_green
 
     -- illuminate 同变量高亮自定义
@@ -81,6 +81,26 @@
             transparent_background = true, -- enables setting the background color.
         })
     --} 
+    -- tokyo night
+    --{
+        require("tokyonight").setup({
+            transparent = true, -- Enable this to disable setting the background color
+            -- transparent = false, -- Enable this to disable setting the background color
+            styles = {
+                -- Style to be applied to different syntax groups
+                -- Value is any valid attr-list value for `:help nvim_set_hl`
+                comments = { italic = true },
+                keywords = { italic = true },
+                functions = { italic = true },
+                -- variables = { italic = true },
+                -- Background styles. Can be "dark", "transparent" or "normal"
+                sidebars = "transparent", -- style for sidebars, see below
+                floats = "transparent", -- style for floating windows
+            },
+            -- sidebars = { "aerial", "NvimTree" },
+            lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
+        })
+    --}
 -- }
 -- 主题选择
 -- vim.cmd.colorscheme("cyberdream")
