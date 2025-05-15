@@ -30,7 +30,7 @@ require("basic")
 require("plugin")
 require("theme")
 -- 全局变量
--- 依赖lazy管理插件，需要放到插件后
+-- 依赖lazy管理插件，需要放到插件require("plugin")后
 _G.nvim_notify = require("globalvars").nvim_notify
 -- 导入快捷键
 require("keybinding")
@@ -44,6 +44,9 @@ require("filetypes")
 -- ------------------------------------------------------
 -- nvim-notify: 通知插件
 require("plugins-config.notify")
+
+-- auto-save: 自动保存
+require("plugins-config.auto-save")
 
 -- nvim-tree: 目录插件启动
 require("plugins-config.nvim-tree")
