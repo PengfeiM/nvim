@@ -33,7 +33,7 @@ mason_lspconfig.setup({
         -- "clangd",       -- C/C++ installed by apt
         -- 添加你需要的其他 LSP
         "ltex",  -- text
-    }
+    },
     -- FIXME: disable auto-enable, mason-lspconfig has a bug, do not update mason now
     automatic_enable = false,
 })
