@@ -19,7 +19,7 @@ nvim_lsp.clangd.setup({
         "cpp",
         "objc",
         "objcpp",
-        "proto",
+        -- "proto",
         "cuda",
     }, -- 支持的文件类型
     root_dir = nvim_lsp.util.root_pattern(
