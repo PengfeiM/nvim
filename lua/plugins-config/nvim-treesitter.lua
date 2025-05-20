@@ -23,6 +23,7 @@ require 'nvim-treesitter.configs'.setup {
         "markdown",
         "markdown_inline",
         "promql",
+        "proto",
         "python",
         "sql",
         "toml",

@@ -66,3 +66,11 @@ brew install npm
 > [!NOTE] please be noted that either you install npm by apt or brew, it may introduce some deps for npm.
 
 
+### proto buf
+`bufls.lua`
+bufbuild/buf
+installed by
+```bash
+# bufls is integrated in this cli tool
+brew install buf
+```
