@@ -68,6 +68,7 @@ require("lazy").setup({
             -- your config goes here
             -- or just leave it empty :)
             -- diaplay save message
+            debounce_delay = 0, -- delay after which a pending save is executed
         },
     },
 

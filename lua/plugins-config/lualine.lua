@@ -93,11 +93,12 @@ lualine.setup({
                 function()
                     local current_line = vim.fn.line('.')                -- 当前行
                     local total_lines = vim.fn.line('$')                 -- 总行数
-                    local current_col = vim.fn.col('.')                  -- 当前列
+                    -- local current_col = vim.fn.col('.')                  -- 当前列
+                    local current_col = vim.fn.virtcol('.')              -- 当前列, 视觉列，按照显示统计，而非字符数
                     local percent = math.floor((current_line / total_lines) * 100) -- 百分比
 
                     -- 格式化显示为：68% :677/994☰ ℅:3 %d%%
-                    return string.format("%2d%%%% :%d/%d☰ ℅:%d", percent, current_line, total_lines, current_col)
+                    return string.format("%2d%%%% :%d/%d☰℅:%d", percent, current_line, total_lines, current_col)
                 end,
                 -- icon = '📜' -- 可选图标，可以根据需要调整
             }

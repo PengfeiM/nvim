@@ -6,7 +6,7 @@ local utils = require('lsp.utils')
 
 nvim_lsp.buf_ls.setup({
     -- keybinding
-    -- on_attach = utils.LspKeybind,
+    on_attach = utils.LspKeybind,
 
 
     -- cmd, installed by `brew install buf`
