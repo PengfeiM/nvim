@@ -20,6 +20,7 @@ require 'nvim-treesitter.configs'.setup {
         "java",
         "json",
         "lua",
+        "make",
         "markdown",
         "markdown_inline",
         "promql",
