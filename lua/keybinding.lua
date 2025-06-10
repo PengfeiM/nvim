@@ -191,6 +191,7 @@ pluginKeyBinding.lspKeybinding = function(mapbuf)
  mapbuf("n", "<leader>ca", ":Lspsaga code_action<CR>", opt)
  -- go to definition
  mapbuf("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
+ mapbuf("n", "gp", ":Lspsaga peek_definition<CR>", opt)
  -- 测试 goto 引用，放在 quickfix 中
  -- vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
  mapbuf('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
@@ -203,9 +204,11 @@ pluginKeyBinding.lspKeybinding = function(mapbuf)
     -- show diagnostic in line
     mapbuf("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
     -- show diagnostic in file
-    mapbuf("n", "<leader>db", "<cmd>Lspsaga show_buf_diagnostics<CR>", opt)
+    -- mapbuf("n", "<leader>db", "<cmd>Lspsaga show_buf_diagnostics<CR>", opt)
+    mapbuf("n", "<leader>db", "<cmd>FzfLua diagnostics_document<CR>", opt)
     -- show diagnostic in workspace
-    mapbuf("n", "<leader>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", opt)
+    -- mapbuf("n", "<leader>dw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", opt)
+    mapbuf("n", "<leader>dw", "<cmd>FzfLua diagnostics_workspace<CR>", opt)
  -- format
  mapbuf("n", "<leader>=", ":lua vim.lsp.buf.format { async = true }<CR>", opt)
 end
