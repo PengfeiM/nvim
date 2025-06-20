@@ -36,7 +36,7 @@ _G.nvim_notify = require("globalvars").nvim_notify
 require("keybinding")
 -- ======================================================
 -- 我自己的功能
-require("filetypes")
+-- require("filetypes")
 
 
 -- ======================================================
@@ -44,6 +44,7 @@ require("filetypes")
 -- ------------------------------------------------------
 -- nvim-notify: 通知插件
 require("plugins-config.notify")
+require("plugins-config.fidget")
 
 -- auto-save: 自动保存
 require("plugins-config.auto-save")
