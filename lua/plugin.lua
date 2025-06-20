@@ -48,6 +48,14 @@ require("lazy").setup({
     {
         'rcarriga/nvim-notify',
     },
+    -- fidget: better lsp notification
+    {
+        "j-hui/fidget.nvim",
+        opts = {
+            -- options
+        },
+        event = "LspAttach",  -- 懒加载方式建议用这个
+    },
 
     -- rainbow 括号
     {

@@ -51,7 +51,7 @@ lualine.setup({
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
             'filename',
-            'lsp_progress',
+            -- 'lsp_progress',
         },
         lualine_x = {
             'encoding',

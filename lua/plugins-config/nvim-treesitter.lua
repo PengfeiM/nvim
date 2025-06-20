@@ -18,6 +18,7 @@ require 'nvim-treesitter.configs'.setup {
         "gotmpl",
         "gowork",
         "java",
+        "jinja",
         "json",
         "lua",
         "make",
