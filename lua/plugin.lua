@@ -43,6 +43,11 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
     },
+    {
+        -- onedarkpro
+        "olimorris/onedarkpro.nvim",
+        priority = 1000, -- Ensure it loads first
+    },
 
     -- nvim-notify: 自定义通知插件
     {
