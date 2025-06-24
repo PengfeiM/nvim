@@ -67,7 +67,8 @@ require("plugins-config.aerial")
 -- require("plugins-config.ufo")
 
 -- fzf-lua: 配置
-require("plugins-config.fzf-lua")
+-- require("plugins-config.fzf-lua")
+require("plugins-config.telescope")
 
 -- nvim-treesitter
 require("plugins-config.nvim-treesitter")
