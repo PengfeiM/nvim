@@ -25,8 +25,6 @@ null_ls.setup({
 		formatting.shfmt,
 		-- StyLua
 		formatting.stylua,
-		-- go fmt
-		formatting.goimports,
 		-- frontend
 		formatting.prettier.with({
 			filetypes = {
@@ -40,7 +38,8 @@ null_ls.setup({
 				"less",
 				"html",
 				-- "json",
-				-- "yaml",
+				"yaml",
+                "yml",
 				"graphql",
 				"astro",
 				"markdown",
@@ -48,13 +47,20 @@ null_ls.setup({
 			extra_filetypes = { "njk" },
 			prefer_local = "node_modules/.bin",
 		}),
+        formatting.prettier.with({
+            filetypes = {
+                "json",
+            },
+            -- make indent = 4 for json file
+            extra_args = {"--tab-width", "4"},
+        }),
         -- add some go functions, 
         -- 1. gomodifytags
         -- 2. go impl a interface
         null_ls.builtins.code_actions.gomodifytags,
         null_ls.builtins.code_actions.impl,
-        null_ls.builtins.formatting.goimports,
-        null_ls.builtins.formatting.gofumpt,
+        formatting.goimports,
+        formatting.gofumpt,
 	},
 	-- 保存自动格式化
 	-- on_attach = function(client)

@@ -25,7 +25,7 @@ nvim_lsp.yamlls.setup({
         yaml = {
             validate = true,
             format = {
-                enable = true,
+                enable = false,
             },
             -- schemas = {
             --     kubernetes = "/*.yaml",
@@ -38,11 +38,16 @@ nvim_lsp.yamlls.setup({
 -- jsonls
 nvim_lsp.jsonls.setup({
     capabilities = capabilities,
-    on_attach = utils.ConfLspKeybind,
+    -- on_attach = utils.ConfLspKeybind,
+    on_attach = function(client, bufnr)
+        utils.ConfLspKeybind(client, bufnr)
+        -- 禁用 jsonls 格式化功能
+        client.server_capabilities.documentFormattingProvider = false
+    end,
     settings = {
         json = {
             schemas = {
-                { fileMatch = { "package.json" }, url = "https://json.schemastore.org/package.json" }
+                -- { fileMatch = { "package.json" }, url = "https://json.schemastore.org/package.json" }
             }
         }
     },
