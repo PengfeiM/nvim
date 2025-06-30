@@ -1,5 +1,23 @@
 # LSP NOTE
 
+lsp installed by Mason
+``` 
+  Installed
+    ◍ bash-language-server bashls
+    ◍ gofumpt
+    ◍ goimports
+    ◍ gomodifytags
+    ◍ impl
+    ◍ json-lsp jsonls
+    ◍ ltex-ls ltex
+    ◍ lua-language-server lua_ls
+    ◍ python-lsp-server pylsp
+    ◍ stylua
+    ◍ taplo
+    ◍ yaml-language-server yamlls
+
+```
+
 ## Dependencies
 
 ### c/c++
@@ -29,6 +47,7 @@ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
 
 ### go
 **used lsps**
+> [!NOTE] you may install tools below by Mason or go install xxx
 * gopls
     * for jump
 * null-ls/none-ls
