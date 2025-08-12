@@ -82,6 +82,10 @@ require("plugins-config.todo-comments")
 -- rainbow
 -- require("plugins-config.rainbow")
 
+-- markdown
+require("plugins-config.markdown.markdown-preview")
+require("plugins-config.markdown.render_markdown")
+
 
 -- indent blankline
 require("plugins-config.indent-blankline")
