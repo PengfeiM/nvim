@@ -1,8 +1,6 @@
 -- conf_file.lua
--- 启用一些配置文件的 lsp
-local nvim_lsp = require('lspconfig')
 -- 引用通用函数
-local utils = require('lsp.utils')
+local utils = require("lsp.utils")
 
 -- just import, no conf
 -- nvim_lsp.yamlls.setup {} -- YAML
@@ -10,6 +8,10 @@ local utils = require('lsp.utils')
 -- nvim_lsp.jsonls.setup {} -- JSON
 -- nvim_lsp.lemminx.setup{} -- XML
 
+-- old
+--[[
+-- 启用一些配置文件的 lsp
+local nvim_lsp = require('lspconfig')
 -- taplo conf, for TOML
 nvim_lsp.taplo.setup({
     capabilities = capabilities,
@@ -52,3 +54,47 @@ nvim_lsp.jsonls.setup({
         }
     },
 })
+--]]
+
+-- new
+
+vim.lsp.config["taplo"] = {
+	-- try to add keybinding
+	on_attach = utils.ConfLspKeybind,
+}
+
+vim.lsp.config["yamlls"] = {
+	on_attach = utils.ConfLspKeybind,
+	settings = {
+		yaml = {
+			validate = true,
+			format = {
+				enable = false,
+			},
+			-- schemas = {
+			--     kubernetes = "/*.yaml",
+			--     ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+			-- }
+		},
+	},
+}
+
+vim.lsp.config["jsonls"] = {
+	-- on_attach = utils.ConfLspKeybind,
+	on_attach = function(client, bufnr)
+		utils.ConfLspKeybind(client, bufnr)
+		-- 禁用 jsonls 格式化功能
+		client.server_capabilities.documentFormattingProvider = false
+	end,
+	settings = {
+		json = {
+			schemas = {
+				-- { fileMatch = { "package.json" }, url = "https://json.schemastore.org/package.json" }
+			},
+		},
+	},
+}
+
+vim.lsp.enable("taplo")
+vim.lsp.enable("yamlls")
+vim.lsp.enable("jsonls")

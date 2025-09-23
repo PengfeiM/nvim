@@ -1,44 +1,34 @@
 -- mason.lua
 local mason_status, mason = pcall(require, "mason")
 if not mason_status then
-    vim.notify("没有找到 mason")
-    return
-    --else
-    --  vim.notify("mason 加载成功")
-    --return
+	vim.notify("没有找到 mason")
+	return
+	--else
+	--  vim.notify("mason 加载成功")
+	--return
 end
 
+--[[
 local nlsp_status, nvim_lsp = pcall(require, "lspconfig")
 if not nlsp_status then
     vim.notify("没有找到 lspconfig")
     return
 end
+]]
 
 local mlsp_status, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mlsp_status then
-    vim.notify("没有找到 mason-lspconfig")
-    return
+	vim.notify("没有找到 mason-lspconfig")
+	return
 end
-
 
 mason.setup({})
 mason_lspconfig.setup({
-        ensure_installed = {
-        "lua_ls",       -- Lua
-        -- "pyright",      -- Python
-        "pylsp", --Python
-        -- "rust_analyzer",-- Rust
-        -- "gopls",        -- Go
-        -- "tsserver",     -- JavaScript/TypeScript
-        -- "clangd",       -- C/C++ installed by apt
-        -- 添加你需要的其他 LSP
-        "ltex",  -- text
-    },
-    -- FIXME: disable auto-enable, mason-lspconfig has a bug, do not update mason now
-    automatic_enable = false,
+	-- FIXME: disable auto-enable, mason-lspconfig has a bug, do not update mason now
+	automatic_enable = false,
 })
 
-
+--[[
 -- 定义快捷键函数
 function LspKeybind(client, bufnr)
     local function buf_set_keymap(...)
@@ -75,7 +65,6 @@ function LspKeybind(client, bufnr)
 end
 
 -- 配置 lua_ls，保证 lua 的语法支持
--- TODO: move it to another file in the future
 nvim_lsp.lua_ls.setup({
     on_attach = LspKeybind,
     on_init = function(client)
@@ -103,7 +92,6 @@ nvim_lsp.lua_ls.setup({
 
 
 -- 配置 pylsp
--- TODO: move it to another file in the future
 nvim_lsp.pylsp.setup({
     on_attach = LspKeybind,
     -- 文档链接：https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
@@ -131,7 +119,6 @@ nvim_lsp.pylsp.setup({
 
 
 -- 配置 gopls，使用已有的 gopls，路径在于：~/go/bin/gopls
--- TODO: move it to another file in the future
 nvim_lsp.gopls.setup({
     on_attach = LspKeybind,
     cmd = { "gopls" },
@@ -198,24 +185,33 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end
 })
 
+--]]
+
+-- lua_ls
+require("lsp.lua_ls")
+
+-- golang
+require("lsp.gopls")
+
+-- python
+require("lsp.pylsp")
 
 -- 引用 clangd.lua，配置 clangd
-require('lsp.clangd')
+require("lsp.clangd")
 
 -- proto bufls
-require('lsp.bufls')
-
+require("lsp.bufls")
 
 -- ltex-ls
 -- no java, nouse
 -- require("lsp.ltex-ls")
+-- java use huge mem, not so useful, disable it
 
 -- confs lsp
 --   1. toml
 --   2. yaml
 --   3. json
 require("lsp.conf_file")
-
 
 -- ========================================================================
 -- 自动化设置
