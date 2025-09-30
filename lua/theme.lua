@@ -79,7 +79,41 @@
     -- {
         require("catppuccin").setup({
             flavour = "auto", -- latte, frappe, macchiato, mocha
-            transparent_background = true, -- enables setting the background color.        })
+            transparent_background = true, -- enables setting the background color.
+            float = {
+                transparent = true, -- enable transparent floating windows
+                solid = false, -- use solid styling for floating windows, see |winborder|
+            },
+            show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
+            no_italic = false, -- Force no italic
+            no_bold = false, -- Force no bold
+            no_underline = false, -- Force no underline
+            styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+                comments = { "italic" }, -- Change the style of comments
+                conditionals = { "italic" },
+                loops = {},
+                functions = {},
+                keywords = {"italic"},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = {},
+                properties = {},
+                types = {"bold", "italic"},
+                operators = {},
+                -- miscs = {}, -- Uncomment to turn off hard-coded styles
+            },
+            default_integrations = true,
+            auto_integrations = true,
+            integrations = {
+                aerial = true,
+                cmp = true,
+                fidget = true,
+                gitsigns = true,
+                lsp_saga = true,
+                nvimtree = true,
+                notify = false,
+            },
         })
     --} 
     -- tokyo night
