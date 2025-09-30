@@ -102,6 +102,17 @@
                 operators = {},
                 -- miscs = {}, -- Uncomment to turn off hard-coded styles
             },
+            default_integrations = true,
+            auto_integrations = true,
+            integrations = {
+                aerial = true,
+                cmp = true,
+                fidget = true,
+                gitsigns = true,
+                lsp_saga = true,
+                nvimtree = true,
+                notify = false,
+            },
         })
     --} 
     -- tokyo night
