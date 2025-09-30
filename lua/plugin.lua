@@ -31,7 +31,6 @@ require("lazy").setup({
         priority = 1000,
     },
     {
-        -- NOTE: pre-downloaded, use it in the future
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
@@ -59,7 +58,7 @@ require("lazy").setup({
         opts = {
             -- options
         },
-        event = "LspAttach",  -- 懒加载方式建议用这个
+        event = "LspAttach", -- 懒加载方式建议用这个
     },
 
     -- rainbow 括号
@@ -215,16 +214,17 @@ require("lazy").setup({
             'nvim-tree/nvim-web-devicons',     -- optional
         }
     },
-    -- 自动补全插件
+    -- ---------------------------------------------------
+    -- 自动补全插件, use blink.cmp instead
     {
-        "hrsh7th/vim-vsnip",
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-vsnip",
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-cmdline',
-        'hrsh7th/nvim-cmp',
-        "mortepau/codicons.nvim",
+        -- "hrsh7th/vim-vsnip",
+        -- "hrsh7th/cmp-nvim-lsp",
+        -- "hrsh7th/cmp-path",
+        -- "hrsh7th/cmp-vsnip",
+        -- 'hrsh7th/cmp-buffer',
+        -- 'hrsh7th/cmp-cmdline',
+        -- 'hrsh7th/nvim-cmp',
+        -- "mortepau/codicons.nvim",
     },
     {
         -- 常见片段
@@ -237,8 +237,19 @@ require("lazy").setup({
     },
     -- beauty 自动补全
     {
-        "onsails/lspkind.nvim",
+        -- "onsails/lspkind.nvim",
     },
+    -- use blink instead
+    -- blink.cmp
+    {
+        "saghen/blink.cmp",
+        version = "*", -- 最新稳定版
+        dependencies = {
+            'rafamadriz/friendly-snippets',
+        },
+    },
+    -- blink-ripgrep
+
     -- --------------------------------------------------
     -- 格式化
     -- null-ls

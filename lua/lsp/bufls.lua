@@ -36,7 +36,7 @@ vim.lsp.config["bufls"] = {
 		"buf.yaml",
 		".git",
 	},
-	capabilities = require("cmp_nvim_lsp").default_capabilities(), -- 自动补全支持
+	-- capabilities = require("cmp_nvim_lsp").default_capabilities(), -- 自动补全支持
 }
 
 vim.lsp.enable("bufls")

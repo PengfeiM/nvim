@@ -106,6 +106,9 @@
             auto_integrations = true,
             integrations = {
                 aerial = true,
+                blink_cmp = {
+                    style = 'bordered',
+                },
                 cmp = true,
                 fidget = true,
                 gitsigns = true,
