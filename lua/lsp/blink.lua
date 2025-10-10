@@ -46,6 +46,29 @@ blink.setup({
 		["<C-j>"] = { "select_next", "fallback" },
 		["<C-k>"] = { "select_prev", "fallback" },
 	},
+	sources = {
+		-- `lsp`, `buffer`, `snippets`, `path` and `omni` are built-in
+		-- so you don't need to define them in `sources.providers`
+		default = { "lsp", "buffer", "snippets", "path", "datword" },
+
+		providers = {
+			-- add datword provider
+			datword = {
+				name = "Word",
+				module = "blink-cmp-dat-word",
+				score_offset = -50, -- a little lower priority
+				opts = {
+					paths = {
+						-- "path_to_your_words.txt", -- add your owned word files before dictionary.
+						"~/.config/nvim/conf/words", -- This file is my own defined words
+						"/usr/share/dict/words", -- This file is included by default on Linux/macOS.
+					},
+					build_command = "BuildDatWord", -- Define a Command to rebuild words, eg: `BuildDatWord`, then use `BuildDatWord!` to force rebuild cache.
+					spellsuggest = true, -- Enable limited spellsuggest. eg: enter `thsi` give you `this`.
+				},
+			},
+		},
+	},
 	completion = {
 		documentation = { auto_show = true }, -- 自动显示文档
 		menu = {
