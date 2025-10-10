@@ -247,6 +247,7 @@ require("lazy").setup({
         dependencies = {
             'rafamadriz/friendly-snippets',
             'xzbdmw/colorful-menu.nvim', -- optional, only makes cmp menu more beautiful
+            'xieyonn/blink-cmp-dat-word',
         },
     },
     -- blink-ripgrep
