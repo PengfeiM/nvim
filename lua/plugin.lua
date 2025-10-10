@@ -246,6 +246,7 @@ require("lazy").setup({
         version = "*", -- 最新稳定版
         dependencies = {
             'rafamadriz/friendly-snippets',
+            'xzbdmw/colorful-menu.nvim', -- optional, only makes cmp menu more beautiful
         },
     },
     -- blink-ripgrep
