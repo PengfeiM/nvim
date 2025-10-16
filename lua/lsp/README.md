@@ -4,6 +4,7 @@ lsp installed by Mason
 ``` 
   Installed
     ◍ bash-language-server bashls
+    ◍ basepyright
     ◍ gofumpt
     ◍ goimports
     ◍ gomodifytags
@@ -11,7 +12,7 @@ lsp installed by Mason
     ◍ json-lsp jsonls
     ◍ ltex-ls ltex
     ◍ lua-language-server lua_ls
-    ◍ python-lsp-server pylsp
+    ◍ ~~python-lsp-server pylsp~~, deprecated, use basepyright.
     ◍ stylua
     ◍ taplo
     ◍ yaml-language-server yamlls

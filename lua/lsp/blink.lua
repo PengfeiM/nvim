@@ -49,7 +49,7 @@ blink.setup({
 	sources = {
 		-- `lsp`, `buffer`, `snippets`, `path` and `omni` are built-in
 		-- so you don't need to define them in `sources.providers`
-		default = { "lsp", "buffer", "snippets", "path", "datword" },
+		default = { "lsp", "buffer", "snippets", "path", "datword", "trae" },
 
 		providers = {
 			-- add datword provider
@@ -66,6 +66,12 @@ blink.setup({
 					build_command = "BuildDatWord", -- Define a Command to rebuild words, eg: `BuildDatWord`, then use `BuildDatWord!` to force rebuild cache.
 					spellsuggest = true, -- Enable limited spellsuggest. eg: enter `thsi` give you `this`.
 				},
+			},
+			trae = {
+				name = "trae",
+				module = "blink.compat.source",
+				score_offset = 0, -- trae的默认score有点低，可以按需改下
+				opts = {},
 			},
 		},
 	},
