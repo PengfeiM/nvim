@@ -194,13 +194,18 @@ require("lsp.lua_ls")
 require("lsp.gopls")
 
 -- python
-require("lsp.pylsp")
+-- require("lsp.pylsp")
+require("lsp.basedpyright")
+require("lsp.ruff")
 
 -- 引用 clangd.lua，配置 clangd
 require("lsp.clangd")
 
 -- proto bufls
 require("lsp.bufls")
+
+-- bash
+require("lsp.bash_ls")
 
 -- ltex-ls
 -- no java, nouse
