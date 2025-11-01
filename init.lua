@@ -109,7 +109,8 @@ require("lsp.format.prettier")
 
 -- ======================================================
 -- ---- diagnostic ----------------------------
-require("diagnostic")
+-- require("diagnostic")
+require("plugins-config.tiny-inline-diag")
 
 -- ======================================================
 

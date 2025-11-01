@@ -106,6 +106,28 @@ require("lazy").setup({
 
     -- =======================================================
 
+    -- 帮助插件 which-key
+    --[[
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        -- opts = {
+        --     -- your configuration comes here
+        --     -- or leave it empty to use the default settings
+        --     -- refer to the configuration section below
+        -- },
+        keys = {
+            -- TODO: move it to keybindings.lua
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    },
+    ]]
 
     -- =======================================================
     -- 功能插件
@@ -215,6 +237,15 @@ require("lazy").setup({
             'nvim-treesitter/nvim-treesitter', -- optional
             'nvim-tree/nvim-web-devicons',     -- optional
         }
+    },
+    -- tiny-inline-diagnostic, beautiful diagnostic
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy",
+        priority = 1000,
+        config = function()
+            vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
+        end,
     },
     -- ---------------------------------------------------
     -- 自动补全插件, use blink.cmp instead
