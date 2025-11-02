@@ -97,7 +97,7 @@ require("lsp.mason")
 require("lsp.lspsaga")
 -- require("lsp.cmp")
 -- require("lsp.lspkind")
-require("lsp.nvim-autopairs")  -- 引用了 cmp，放在 cmp 后面
+require("lsp.nvim-autopairs")
 require("lsp.blink")
 require("lsp.none-ls")
 require("lsp.format.prettier")

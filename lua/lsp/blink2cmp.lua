@@ -2,6 +2,9 @@
 
 local capabilities = require("lsp.blink")
 
+local basepyright_config = vim.lsp.config["basepyright"] or {}
+vim.lsp.config["basepyright"] = vim.tbl_extend("force", basepyright_config, { capabilities = capabilities })
+
 local bufls_config = vim.lsp.config["bufls"] or {}
 vim.lsp.config["bufls"] = vim.tbl_extend("force", bufls_config, { capabilities = capabilities })
 
