@@ -55,3 +55,6 @@
     -- 实时搜索
     vim.o.incsearch = true
 --}
+
+-- call some wsl
+require("wsl.clipboard")
