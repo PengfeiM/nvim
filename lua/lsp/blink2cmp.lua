@@ -19,3 +19,6 @@ vim.lsp.config["pylsp"] = vim.tbl_extend("force", pylsp_config, { capabilities =
 
 local lua_ls_config = vim.lsp.config["lua_ls"] or {}
 vim.lsp.config["lua_ls"] = vim.tbl_extend("force", lua_ls_config, { capabilities = capabilities })
+
+local rust_analyzer_config = vim.lsp.config["rust_analyzer"] or {}
+vim.lsp.config["rust_analyzer"] = vim.tbl_extend("force", rust_analyzer_config, { capabilities = capabilities })
