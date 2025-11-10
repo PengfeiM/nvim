@@ -96,3 +96,12 @@ installed by
 # bufls is integrated in this cli tool
 brew install buf
 ```
+
+### rust
+**deps**
+* rust-analyzer
+* rustfmt
+```bash
+rustup component add rustfmt
+restup component add rust-analyzer
+```

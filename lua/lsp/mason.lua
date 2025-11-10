@@ -201,6 +201,9 @@ require("lsp.ruff")
 -- 引用 clangd.lua，配置 clangd
 require("lsp.clangd")
 
+-- rust
+require("lsp.rust-analyzer")
+
 -- proto bufls
 require("lsp.bufls")
 
