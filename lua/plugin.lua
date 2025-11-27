@@ -146,15 +146,23 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
 
-    -- 顶部文件 tab 插件：bufferline
+    -- -- 顶部文件 tab 插件：bufferline
+    -- {
+    --     'akinsho/bufferline.nvim',
+    --     version = "*",
+    --     dependencies = 'nvim-tree/nvim-web-devicons'
+    -- },
+    -- -- bufferline 协作插件：bufdelete
+    -- {
+    --     'famiu/bufdelete.nvim',
+    -- },
+    -- use barbar instead
     {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        dependencies = 'nvim-tree/nvim-web-devicons'
-    },
-    -- bufferline 协作插件：bufdelete
-    {
-        'famiu/bufdelete.nvim',
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
     },
 
     -- tagbar：代码大纲查看

@@ -56,7 +56,9 @@ require("plugins-config.nvim-tree")
 require("plugins-config.lualine")
 
 -- bufferline: tab 栏启动
-require("plugins-config.bufferline")
+-- require("plugins-config.bufferline")
+-- use barbar instead
+require("plugins-config.barbar")
 
 -- tagbar：配置
 -- use aerial 
