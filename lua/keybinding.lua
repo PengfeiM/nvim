@@ -161,6 +161,7 @@ vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "Telesco
 vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, { desc = "Telescope buffers" }, opt)
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags, { desc = "Telescope help tags" }, opt)
 vim.keymap.set("n", "<leader>fr", telescope_builtin.registers, { desc = "Telescope registers" }, opt)
+vim.keymap.set("n", "<leader>fd", telescope_builtin.diagnostics, { desc = "Telescope diagnostic" }, opt)
 vim.keymap.set("n", "<leader>td", ":TodoTelescope<CR>", opt)
 
 -- ----------------------------------------------------------
