@@ -21,6 +21,10 @@ vim.lsp.config["rust_analyzer"] = {
 				enable = true,
 			},
 		},
+		checkOnSave = {
+			enable = true,
+			command = "clippy",
+		},
 	},
 	on_attach = function(client, bufnr)
 		-- vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
