@@ -46,6 +46,8 @@ require("keybinding")
 require("plugins-config.notify")
 require("plugins-config.fidget")
 
+-- useful plugin to help me get hands on vim
+require("plugins-config.nvim-tips")
 -- auto-save: 自动保存
 require("plugins-config.auto-save")
 
