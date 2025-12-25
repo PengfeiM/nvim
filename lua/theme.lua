@@ -144,12 +144,12 @@
             colors = {}, -- Override default colors or create your own
             highlights = {}, -- Override default highlight groups or create your own
             styles = { -- For example, to apply bold and italic, use "bold,italic"
-                types = "italic", -- Style that is applied to types
+                types = "bold,italic", -- Style that is applied to types
                 methods = "italic", -- Style that is applied to methods
                 numbers = "NONE", -- Style that is applied to numbers
                 strings = "NONE", -- Style that is applied to strings
                 comments = "italic", -- Style that is applied to comments
-                keywords = "bold,italic", -- Style that is applied to keywords
+                keywords = "italic", -- Style that is applied to keywords
                 constants = "bold", -- Style that is applied to constants
                 functions = "bold", -- Style that is applied to functions
                 operators = "NONE", -- Style that is applied to operators

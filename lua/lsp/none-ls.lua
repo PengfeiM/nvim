@@ -52,7 +52,7 @@ null_ls.setup({
                 "json",
             },
             -- make indent = 4 for json file
-            extra_args = {"--tab-width", "4"},
+            extra_args = {"--tab-width", "2"},
         }),
         -- add some go functions, 
         -- 1. gomodifytags

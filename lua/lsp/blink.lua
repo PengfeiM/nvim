@@ -68,12 +68,12 @@ blink.setup({
 					spellsuggest = true, -- Enable limited spellsuggest. eg: enter `thsi` give you `this`.
 				},
 			},
-			trae = {
-				name = "trae",
-				module = "blink.compat.source",
-				score_offset = 0, -- trae的默认score有点低，可以按需改下
-				opts = {},
-			},
+			-- trae = {
+			-- 	name = "trae",
+			-- 	module = "blink.compat.source",
+			-- 	score_offset = 0, -- trae的默认score有点低，可以按需改下
+			-- 	opts = {},
+			-- },
 		},
 	},
 	completion = {

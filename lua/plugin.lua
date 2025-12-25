@@ -14,7 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- trae: get url from env
-local trae_url = os.getenv("TRAE_URL")
+-- local trae_url = os.getenv("TRAE_URL")
 
 -- 插件列表
 require("lazy").setup({
@@ -60,6 +60,7 @@ require("lazy").setup({
         opts = {
             -- options
         },
+        lazy = true,
         event = "LspAttach", -- 懒加载方式建议用这个
     },
 
@@ -181,7 +182,7 @@ require("lazy").setup({
     {
         'romgrk/barbar.nvim',
         dependencies = {
-            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
             'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
         },
     },
@@ -208,11 +209,13 @@ require("lazy").setup({
     -- },
 
     -- fzf-lua：文件管理插件
+    --[[
     {
         "ibhagwan/fzf-lua",
         -- optional for icon support
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
+    --]]
     -- telescope: nvim version fzf-lua
     {
         'nvim-telescope/telescope.nvim', -- tag = '0.1.8',
@@ -313,25 +316,25 @@ require("lazy").setup({
         },
     },
     -- blink-compat -> trea
-    {
-        "saghen/blink.compat",
-        -- use v2.* for blink.cmp v1.*
-        version = "2.*",
-        -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-        lazy = true,
-        -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-        opts = {},
-    },
-    {
-        trae_url,
-        -- 去掉dependence中的nvim-cmp
-        -- dependencies = {
-        --     "hrsh7th/nvim-cmp",
-        -- },
-        config = function()
-            require("trae").setup({})
-        end,
-    },
+    -- {
+    --     "saghen/blink.compat",
+    --     -- use v2.* for blink.cmp v1.*
+    --     version = "2.*",
+    --     -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+    --     lazy = true,
+    --     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+    --     opts = {},
+    -- },
+    -- {
+    --     trae_url,
+    --     -- 去掉dependence中的nvim-cmp
+    --     -- dependencies = {
+    --     --     "hrsh7th/nvim-cmp",
+    --     -- },
+    --     config = function()
+    --         require("trae").setup({})
+    --     end,
+    -- },
 
 
 
