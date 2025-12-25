@@ -270,6 +270,41 @@ require("lazy").setup({
             'nvim-tree/nvim-web-devicons',     -- optional
         }
     },
+    -- lsp-signature
+    {
+        "ray-x/lsp_signature.nvim",
+        -- event = "InsertEnter",
+        lazy = true,
+        init = function()
+            local inserted = false
+            local lsp_attached = false
+
+            local function try_load()
+            if inserted and lsp_attached then
+                require("lazy").load({ plugins = { "lsp_signature.nvim" } })
+            end
+            end
+
+            vim.api.nvim_create_autocmd("InsertEnter", {
+            once = true,
+            callback = function()
+                inserted = true
+                try_load()
+            end,
+            })
+
+            vim.api.nvim_create_autocmd("LspAttach", {
+            callback = function(args)
+                if args.buf == vim.api.nvim_get_current_buf() then
+                lsp_attached = true
+                try_load()
+                end
+            end,
+            })
+        end,
+    },
+
+
     -- tiny-inline-diagnostic, beautiful diagnostic
     {
         "rachartier/tiny-inline-diagnostic.nvim",

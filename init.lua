@@ -103,6 +103,7 @@ require("plugins-config.lazygit")
 -- ------------------------------------------------------
 require("lsp.mason")
 require("lsp.lspsaga")
+require("lsp.lsp-signature")
 -- require("lsp.cmp")
 -- require("lsp.lspkind")
 require("lsp.nvim-autopairs")
