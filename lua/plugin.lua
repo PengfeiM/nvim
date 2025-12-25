@@ -58,6 +58,7 @@ require("lazy").setup({
         opts = {
             -- options
         },
+        lazy = true,
         event = "LspAttach", -- 懒加载方式建议用这个
     },
 
@@ -179,7 +180,7 @@ require("lazy").setup({
     {
         'romgrk/barbar.nvim',
         dependencies = {
-            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
             'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
         },
     },
@@ -206,11 +207,13 @@ require("lazy").setup({
     -- },
 
     -- fzf-lua：文件管理插件
+    --[[
     {
         "ibhagwan/fzf-lua",
         -- optional for icon support
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
+    --]]
     -- telescope: nvim version fzf-lua
     {
         'nvim-telescope/telescope.nvim', -- tag = '0.1.8',

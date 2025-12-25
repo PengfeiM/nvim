@@ -14,8 +14,8 @@ local function get_lsp_venv()
             if python_path then
                 local venv_name = python_path:match("([^/\\]+)$")
 
-                -- 如果虚拟环境名是 "venv"，则回退到路径的倒数第二部分作为虚拟环境名
-                if venv_name == "venv" then
+                -- 如果虚拟环境名是 "venv" 或者 ".venv"，则回退到路径的倒数第二部分作为虚拟环境名
+                if venv_name == "venv" or venv_name == ".venv" then
                     venv_name = python_path:match("([^/\\]+)[/\\][^/\\]+$")
                 end
 
@@ -42,9 +42,9 @@ local function get_lsp_venv()
             handle:close()
         end
 
-        -- 如果虚拟环境名是 "venv"，则回退到路径的倒数第二部分作为虚拟环境名
+        -- 如果虚拟环境名是 "venv" 或者 ".venv"，则回退到路径的倒数第二部分作为虚拟环境名
         local venv_name = env:match("[^/\\]+$")
-        if venv_name == "venv" then
+        if venv_name == "venv" or venv_name == ".venv" then
             venv_name = env:match("([^/\\]+)[/\\][^/\\]+$")
         end
 
