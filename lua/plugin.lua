@@ -222,6 +222,9 @@ require("lazy").setup({
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-fzf-native.nvim',
             'nvim-telescope/telescope-ui-select.nvim',
+            -- optional
+            "AckslD/nvim-neoclip.lua",
+            'edolphin-ydf/goimpl.nvim',
         }
     },
 

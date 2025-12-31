@@ -103,6 +103,7 @@ vim.keymap.set("n", "<leader>7", "<cmd>BufferGoto 7<CR>", opt)
 vim.keymap.set("n", "<leader>8", "<cmd>BufferGoto 8<CR>", opt)
 vim.keymap.set("n", "<leader>9", "<cmd>BufferGoto 9<CR>", opt)
 vim.keymap.set("n", "<leader>0", "<cmd>BufferLast<CR>", opt)
+vim.keymap.set("n", "<leader>-", ":b #<CR>", opt)
 -- close
 vim.keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>", opt)
 vim.keymap.set("n", "<leader>bcc", "<cmd>BufferCloseAllButCurrent<CR>", opt)
@@ -152,17 +153,68 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<leader>fs",
+	"<leader>fw",
 	telescope_builtin.grep_string,
 	{ desc = "Telescope live grep word under cursor" },
 	opt
 )
+vim.keymap.set("v", "<leader>fw", function()
+  -- 将当前选区内容复制到临时寄存器 z
+  vim.cmd('normal! "zy')
+  local text = vim.fn.getreg('z')
+  -- 去掉换行符，适合 grep
+  text = text:gsub("\n", "")
+  require("telescope.builtin").grep_string({
+    search = text,
+  })
+end, { desc = "Grep visual selection (string)" })
 vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "Telescope live grep" }, opt)
+vim.keymap.set("v", "<leader>fg", function()
+  -- 将当前选区内容复制到临时寄存器 z
+  vim.cmd('normal! "zy')
+  local text = vim.fn.getreg('z')
+  -- 去掉换行符，适合 grep
+  text = text:gsub("\n", "")
+  require("telescope.builtin").live_grep({
+    default_text = text,
+  })
+end, { desc = "Grep visual selection" })
 vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, { desc = "Telescope buffers" }, opt)
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags, { desc = "Telescope help tags" }, opt)
 vim.keymap.set("n", "<leader>fr", telescope_builtin.registers, { desc = "Telescope registers" }, opt)
 vim.keymap.set("n", "<leader>fd", telescope_builtin.diagnostics, { desc = "Telescope diagnostic" }, opt)
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope neoclip<CR>", { desc = "Telescope neoclip" }, opt)
 vim.keymap.set("n", "<leader>td", ":TodoTelescope<CR>", opt)
+vim.keymap.set("n", "gs", function()
+  telescope_builtin.lsp_document_symbols({ previewer = false })
+end, { desc = "Go to symbol" })
+-- symbols: current buffer
+vim.keymap.set(
+  "n",
+  "<leader>fs",
+  function()
+    telescope_builtin.lsp_document_symbols({
+      symbols = {
+        "function",
+        "method",
+        "class",
+        "struct",
+        "interface",
+        "enum",
+      },
+    })
+  end,
+  { desc = "Symbols (document)" }
+)
+-- symbols: workspace
+vim.keymap.set(
+  "n",
+  "<leader>fS",
+  function()
+    telescope_builtin.lsp_workspace_symbols()
+  end,
+  { desc = "Symbols (workspace)" }
+)
 
 -- ----------------------------------------------------------
 -- Gitsigns 快捷键
