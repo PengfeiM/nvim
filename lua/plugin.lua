@@ -62,6 +62,11 @@ require("lazy").setup({
         event = "LspAttach", -- 懒加载方式建议用这个
     },
 
+    -- better f,F,t,T
+    {
+        'jinh0/eyeliner.nvim',
+    },
+
     {
         "saxon1964/neovim-tips",
         version = "*", -- Only update on tagged releases
