@@ -5,4 +5,7 @@ end
 
 notify.setup({
     background_colour = "#00000040",   -- #RRGGBBAA，最后的 AA 为透明度值（0~255）
+    fps = 60,
+    top_down = false,
+    timeout = 1000,
 })

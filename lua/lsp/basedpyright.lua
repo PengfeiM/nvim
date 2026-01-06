@@ -26,7 +26,7 @@ local function set_python_path(command)
 	end
 end
 
-vim.lsp.config["basepyright"] = {
+vim.lsp.config["basedpyright"] = {
 	cmd = { "basedpyright-langserver", "--stdio" },
 	filetypes = { "python" },
 	root_markers = {
@@ -44,8 +44,8 @@ vim.lsp.config["basepyright"] = {
 				typeCheckingMode = "standard",
 				autoSearchPaths = true,
 				useLibraryCodeForTypes = true,
-				-- diagnosticMode = "openFilesOnly",
-				diagnosticMode = "workspace",
+				diagnosticMode = "openFilesOnly",
+				-- diagnosticMode = "workspace",
 			},
 		},
 	},
@@ -74,4 +74,4 @@ vim.lsp.config["basepyright"] = {
 	end,
 }
 
-vim.lsp.enable("basepyright")
+vim.lsp.enable("basedpyright")

@@ -9,8 +9,8 @@ local opt = { noremap = true, silent = true }
 -- ================================================================
 -- Leader 键
 -- ----------------------------------------------------------------
-vim.g.mapleader = ";"
-vim.g.maplocalleader = ";"
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 -- ================================================================
 
 -- ================================================================
@@ -60,7 +60,7 @@ pluginKeyBinding.nvim_tree = {
 }
 
 -- bufferline 快捷键
--- keybindings.lua
+--[[
 -- buffer 切换、关闭
 vim.keymap.set("n", "<Leader>bp", ":BufferLineCyclePrev<CR>", opt)
 vim.keymap.set("n", "<Leader>bn", ":BufferLineCycleNext<CR>", opt)
@@ -85,6 +85,43 @@ vim.keymap.set("n", "<leader>$", '<cmd>lua require("bufferline").go_to(-1, true)
 -- 跳转到上一个 buffer
 --vim.keymap.set('n', '<leader>-', '<cmd>BufferLineGoToBuffer #<CR>', opt)
 vim.keymap.set("n", "<leader>-", ":b #<CR>", opt)
+]]
+-- use barbar
+-- navigate
+vim.keymap.set("n", "<leader>bn", "<Cmd>BufferNext<CR>", opt)
+vim.keymap.set("n", "<leader>bp", "<Cmd>BufferPrevious<CR>", opt)
+vim.keymap.set("n", "<leader>bmp", "<Cmd>BufferMovePrevious<CR>", opt)
+vim.keymap.set("n", "<leader>bmn", "<Cmd>BufferMoveNext<CR>", opt)
+-- goto
+vim.keymap.set("n", "<leader>1", "<cmd>BufferGoto 1<CR>", opt)
+vim.keymap.set("n", "<leader>2", "<cmd>BufferGoto 2<CR>", opt)
+vim.keymap.set("n", "<leader>3", "<cmd>BufferGoto 3<CR>", opt)
+vim.keymap.set("n", "<leader>4", "<cmd>BufferGoto 4<CR>", opt)
+vim.keymap.set("n", "<leader>5", "<cmd>BufferGoto 5<CR>", opt)
+vim.keymap.set("n", "<leader>6", "<cmd>BufferGoto 6<CR>", opt)
+vim.keymap.set("n", "<leader>7", "<cmd>BufferGoto 7<CR>", opt)
+vim.keymap.set("n", "<leader>8", "<cmd>BufferGoto 8<CR>", opt)
+vim.keymap.set("n", "<leader>9", "<cmd>BufferGoto 9<CR>", opt)
+vim.keymap.set("n", "<leader>0", "<cmd>BufferLast<CR>", opt)
+vim.keymap.set("n", "<leader>-", ":b #<CR>", opt)
+-- close
+vim.keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>", opt)
+vim.keymap.set("n", "<leader>bcc", "<cmd>BufferCloseAllButCurrent<CR>", opt)
+vim.keymap.set("n", "<leader>bcp", "<cmd>BufferCloseAllButPinned<CR>", opt)
+vim.keymap.set("n", "<leader>bco", "<cmd>BufferCloseAllButCurrentOrPinned<CR>", opt)
+vim.keymap.set("n", "<leader>bcl", "<cmd>BufferCloseBuffersLeft<CR>", opt)
+vim.keymap.set("n", "<leader>bcr", "<cmd>BufferCloseBuffersRight<CR>", opt)
+-- pin
+vim.keymap.set("n", "<leader>bP", "<cmd>BufferPin<CR>", opt)
+-- picker
+vim.keymap.set("n", "<leader>bK", "<Cmd>BufferPick<CR>", opt)
+vim.keymap.set("n", "<leader>bD", "<Cmd>BufferPickDelete<CR>", opt)
+-- sort
+vim.keymap.set("n", "<leader>bsN", "<Cmd>BufferOrderByBufferNumber<CR>", opt) -- by number
+vim.keymap.set("n", "<leader>bsn", "<Cmd>BufferOrderByName<CR>", opt)
+vim.keymap.set("n", "<leader>bsd", "<Cmd>BufferOrderByDirectory<CR>", opt)
+vim.keymap.set("n", "<leader>bsl", "<Cmd>BufferOrderByLanguage<CR>", opt)
+vim.keymap.set("n", "<leader>bsw", "<Cmd>BufferOrderByWindowNumber<CR>", opt)
 
 -- tagbar 快捷键
 -- vim.keymap.set("n", "<Leader>tl", ":TagbarToggle<CR>", opt)
@@ -104,14 +141,80 @@ vim.keymap.set("n", "<leader>tl", "<cmd>AerialToggle!<CR>")
 -- telescope
 local telescope_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, { desc = "Telescope find files" }, opt)
-vim.keymap.set("n", "<leader>fo", telescope_builtin.oldfiles, { desc = "Telescope find files" }, opt)
-vim.keymap.set("n", "<leader>fc", telescope_builtin.current_buffer_fuzzy_find, { desc = "Telescope search in current buf"}, opt)
-vim.keymap.set("n", "<leader>fs", telescope_builtin.grep_string, { desc = "Telescope live grep word under cursor" }, opt)
+vim.keymap.set("n", "<leader>fo", function()
+	telescope_builtin.oldfiles({ cwd_only = true })
+end, { desc = "Telescope find files" }, opt)
+vim.keymap.set(
+	"n",
+	"<leader>fc",
+	telescope_builtin.current_buffer_fuzzy_find,
+	{ desc = "Telescope search in current buf" },
+	opt
+)
+vim.keymap.set(
+	"n",
+	"<leader>fw",
+	telescope_builtin.grep_string,
+	{ desc = "Telescope live grep word under cursor" },
+	opt
+)
+vim.keymap.set("v", "<leader>fw", function()
+  -- 将当前选区内容复制到临时寄存器 z
+  vim.cmd('normal! "zy')
+  local text = vim.fn.getreg('z')
+  -- 去掉换行符，适合 grep
+  text = text:gsub("\n", "")
+  require("telescope.builtin").grep_string({
+    search = text,
+  })
+end, { desc = "Grep visual selection (string)" })
 vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "Telescope live grep" }, opt)
+vim.keymap.set("v", "<leader>fg", function()
+  -- 将当前选区内容复制到临时寄存器 z
+  vim.cmd('normal! "zy')
+  local text = vim.fn.getreg('z')
+  -- 去掉换行符，适合 grep
+  text = text:gsub("\n", "")
+  require("telescope.builtin").live_grep({
+    default_text = text,
+  })
+end, { desc = "Grep visual selection" })
 vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, { desc = "Telescope buffers" }, opt)
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags, { desc = "Telescope help tags" }, opt)
-vim.keymap.set("n", "<leader>fr", telescope_builtin.registers, { desc = "Telescope registers"}, opt)
+vim.keymap.set("n", "<leader>fr", telescope_builtin.registers, { desc = "Telescope registers" }, opt)
+vim.keymap.set("n", "<leader>fd", telescope_builtin.diagnostics, { desc = "Telescope diagnostic" }, opt)
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope neoclip<CR>", { desc = "Telescope neoclip" }, opt)
 vim.keymap.set("n", "<leader>td", ":TodoTelescope<CR>", opt)
+vim.keymap.set("n", "gs", function()
+  telescope_builtin.lsp_document_symbols({ previewer = false })
+end, { desc = "Go to symbol" })
+-- symbols: current buffer
+vim.keymap.set(
+  "n",
+  "<leader>fs",
+  function()
+    telescope_builtin.lsp_document_symbols({
+      symbols = {
+        "function",
+        "method",
+        "class",
+        "struct",
+        "interface",
+        "enum",
+      },
+    })
+  end,
+  { desc = "Symbols (document)" }
+)
+-- symbols: workspace
+vim.keymap.set(
+  "n",
+  "<leader>fS",
+  function()
+    telescope_builtin.lsp_workspace_symbols()
+  end,
+  { desc = "Symbols (workspace)" }
+)
 
 -- ----------------------------------------------------------
 -- Gitsigns 快捷键
@@ -177,6 +280,9 @@ end
 --     -- 可以添加按键绑定
 --     vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>", opt)
 -- end
+
+-- undotree: atone
+vim.keymap.set("n", "<Leader>ud", "<cmd>Atone<CR>", opt)
 
 -- ================================================================
 

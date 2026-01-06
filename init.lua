@@ -46,6 +46,8 @@ require("keybinding")
 require("plugins-config.notify")
 require("plugins-config.fidget")
 
+-- useful plugin to help me get hands on vim
+require("plugins-config.nvim-tips")
 -- auto-save: 自动保存
 require("plugins-config.auto-save")
 
@@ -56,7 +58,9 @@ require("plugins-config.nvim-tree")
 require("plugins-config.lualine")
 
 -- bufferline: tab 栏启动
-require("plugins-config.bufferline")
+-- require("plugins-config.bufferline")
+-- use barbar instead
+require("plugins-config.barbar")
 
 -- tagbar：配置
 -- use aerial 
@@ -95,6 +99,7 @@ require("plugins-config.lazygit")
 -- ------------------------------------------------------
 require("lsp.mason")
 require("lsp.lspsaga")
+require("lsp.lsp-signature")
 -- require("lsp.cmp")
 -- require("lsp.lspkind")
 require("lsp.nvim-autopairs")

@@ -58,7 +58,29 @@ require("lazy").setup({
         opts = {
             -- options
         },
+        lazy = true,
         event = "LspAttach", -- 懒加载方式建议用这个
+    },
+
+    {
+        "saxon1964/neovim-tips",
+        version = "*", -- Only update on tagged releases
+        lazy = true,   -- Load only when keybinds are triggered
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL: Choose your preferred markdown renderer (or omit for raw markdown)
+            "MeanderingProgrammer/render-markdown.nvim", -- Clean rendering
+            -- OR: "OXY2DEV/markview.nvim", -- Rich rendering with advanced features
+        },
+        opts = {
+            -- IMPORTANT: Daily tip DOES NOT WORK with lazy = true
+            -- Reason: lazy = true loads plugin only when keybinds are triggered,
+            --         but daily_tip needs plugin loaded at startup
+            -- Solution: Keep daily_tip = 0 here, or use Option 2 below for daily tips
+            daily_tip = 0, -- 0 = off, 1 = once per day, 2 = every startup
+            -- Other optional settings...
+            bookmark_symbol = "🌟 ",
+        },
     },
 
     -- rainbow 括号
@@ -105,7 +127,6 @@ require("lazy").setup({
     -- =======================================================
 
     -- 帮助插件 which-key
-    --[[
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -125,7 +146,6 @@ require("lazy").setup({
             },
         },
     },
-    ]]
 
     -- =======================================================
     -- 功能插件
@@ -144,15 +164,23 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
 
-    -- 顶部文件 tab 插件：bufferline
+    -- -- 顶部文件 tab 插件：bufferline
+    -- {
+    --     'akinsho/bufferline.nvim',
+    --     version = "*",
+    --     dependencies = 'nvim-tree/nvim-web-devicons'
+    -- },
+    -- -- bufferline 协作插件：bufdelete
+    -- {
+    --     'famiu/bufdelete.nvim',
+    -- },
+    -- use barbar instead
     {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        dependencies = 'nvim-tree/nvim-web-devicons'
-    },
-    -- bufferline 协作插件：bufdelete
-    {
-        'famiu/bufdelete.nvim',
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
     },
 
     -- tagbar：代码大纲查看
@@ -177,11 +205,13 @@ require("lazy").setup({
     -- },
 
     -- fzf-lua：文件管理插件
+    --[[
     {
         "ibhagwan/fzf-lua",
         -- optional for icon support
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
+    --]]
     -- telescope: nvim version fzf-lua
     {
         'nvim-telescope/telescope.nvim', -- tag = '0.1.8',
@@ -190,6 +220,9 @@ require("lazy").setup({
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-fzf-native.nvim',
             'nvim-telescope/telescope-ui-select.nvim',
+            -- optional
+            "AckslD/nvim-neoclip.lua",
+            'edolphin-ydf/goimpl.nvim',
         }
     },
 
@@ -236,6 +269,41 @@ require("lazy").setup({
             'nvim-tree/nvim-web-devicons',     -- optional
         }
     },
+    -- lsp-signature
+    {
+        "ray-x/lsp_signature.nvim",
+        -- event = "InsertEnter",
+        lazy = true,
+        init = function()
+            local inserted = false
+            local lsp_attached = false
+
+            local function try_load()
+            if inserted and lsp_attached then
+                require("lazy").load({ plugins = { "lsp_signature.nvim" } })
+            end
+            end
+
+            vim.api.nvim_create_autocmd("InsertEnter", {
+            once = true,
+            callback = function()
+                inserted = true
+                try_load()
+            end,
+            })
+
+            vim.api.nvim_create_autocmd("LspAttach", {
+            callback = function(args)
+                if args.buf == vim.api.nvim_get_current_buf() then
+                lsp_attached = true
+                try_load()
+                end
+            end,
+            })
+        end,
+    },
+
+
     -- tiny-inline-diagnostic, beautiful diagnostic
     {
         "rachartier/tiny-inline-diagnostic.nvim",

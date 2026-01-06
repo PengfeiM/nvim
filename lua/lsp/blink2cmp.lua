@@ -2,8 +2,8 @@
 
 local capabilities = require("lsp.blink")
 
-local basepyright_config = vim.lsp.config["basepyright"] or {}
-vim.lsp.config["basepyright"] = vim.tbl_extend("force", basepyright_config, { capabilities = capabilities })
+local basepyright_config = vim.lsp.config["basedpyright"] or {}
+vim.lsp.config["basedpyright"] = vim.tbl_extend("force", basepyright_config, { capabilities = capabilities })
 
 local bufls_config = vim.lsp.config["bufls"] or {}
 vim.lsp.config["bufls"] = vim.tbl_extend("force", bufls_config, { capabilities = capabilities })
@@ -19,3 +19,6 @@ vim.lsp.config["pylsp"] = vim.tbl_extend("force", pylsp_config, { capabilities =
 
 local lua_ls_config = vim.lsp.config["lua_ls"] or {}
 vim.lsp.config["lua_ls"] = vim.tbl_extend("force", lua_ls_config, { capabilities = capabilities })
+
+local rust_analyzer_config = vim.lsp.config["rust_analyzer"] or {}
+vim.lsp.config["rust_analyzer"] = vim.tbl_extend("force", rust_analyzer_config, { capabilities = capabilities })
