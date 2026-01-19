@@ -36,7 +36,7 @@ else
 					-- paste = "<c-p>",
 					paste = "<cr>",
 					-- paste_behind = "<c-P>",
-                    paste_behind = nil,
+					paste_behind = nil,
 					replay = "<c-q>", -- replay a macro
 					delete = "<c-d>", -- delete an entry
 					edit = "<c-e>", -- edit an entry
@@ -46,7 +46,7 @@ else
 					select = "y",
 					-- paste = "p",
 					--- It is possible to map to more than one key.
-					paste = { 'p', '<cr>' },
+					paste = { "p", "<cr>" },
 					paste_behind = "P",
 					replay = "q",
 					delete = "d",
@@ -58,3 +58,5 @@ else
 	})
 	telescope.load_extension("neoclip")
 end
+-- aerial
+telescope.load_extension("aerial")
