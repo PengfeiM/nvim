@@ -16,7 +16,7 @@ vim.g.maplocalleader = " "
 -- ================================================================
 -- 退出快捷键
 -- ----------------------------------------------------------------
-vim.keymap.set("n", "<Leader>q", ":q<CR>", opt)
+vim.keymap.set("n", "<Leader>qq", ":q<CR>", opt)
 vim.keymap.set("n", "<Leader>qa", ":wqa<CR>", opt)
 -- ================================================================
 
@@ -186,35 +186,40 @@ vim.keymap.set("n", "<leader>fd", telescope_builtin.diagnostics, { desc = "Teles
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope neoclip<CR>", { desc = "Telescope neoclip" }, opt)
 vim.keymap.set("n", "<leader>td", ":TodoTelescope<CR>", opt)
 vim.keymap.set("n", "gs", function()
-  telescope_builtin.lsp_document_symbols({ previewer = false })
+  telescope_builtin.lsp_document_symbols({
+        previewer = false,
+        symbol_width = 80,
+    })
 end, { desc = "Go to symbol" })
 -- symbols: current buffer
-vim.keymap.set(
-  "n",
-  "<leader>fs",
-  function()
-    telescope_builtin.lsp_document_symbols({
-      symbols = {
-        "function",
-        "method",
-        "class",
-        "struct",
-        "interface",
-        "enum",
-      },
-    })
-  end,
-  { desc = "Symbols (document)" }
-)
--- symbols: workspace
-vim.keymap.set(
-  "n",
-  "<leader>fS",
-  function()
-    telescope_builtin.lsp_workspace_symbols()
-  end,
-  { desc = "Symbols (workspace)" }
-)
+-- use aerial
+vim.keymap.set("n", "<leader>fs", "<cmd>Telescope aerial<CR>", {desc = "Telescope aerial"}, opt)
+-- vim.keymap.set(
+--   "n",
+--   "<leader>fs",
+--   function()
+--     telescope_builtin.lsp_document_symbols({
+--       symbols = {
+--         "function",
+--         "method",
+--         "class",
+--         "struct",
+--         "interface",
+--         "enum",
+--       },
+--     })
+--   end,
+--   { desc = "Symbols (document)" }
+-- )
+-- -- symbols: workspace
+-- vim.keymap.set(
+--   "n",
+--   "<leader>fS",
+--   function()
+--     telescope_builtin.lsp_workspace_symbols()
+--   end,
+--   { desc = "Symbols (workspace)" }
+-- )
 
 -- ----------------------------------------------------------
 -- Gitsigns 快捷键
