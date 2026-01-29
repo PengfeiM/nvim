@@ -50,6 +50,7 @@ lualine.setup({
         },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
+            'tabs',
             'filename',
             -- 'lsp_progress',
         },
@@ -57,28 +58,29 @@ lualine.setup({
             'encoding',
             'fileformat',
             {
-                function()
-                    local msg = "No Active Lsp"
-                    local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-                    -- local clients = vim.lsp.get_active_clients()
-                    local clients = vim.lsp.get_clients()
-                    if next(clients) == nil then
-                        return msg
-                    end
-                    local clients_name = {}
-                    for _, client in ipairs(clients) do
-                        local filetypes = client.config.filetypes
-                        if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                            -- return "LSP"
-                            -- return client.name
-                            table.insert(clients_name, client.name)
-                        end
-                    end
-                    if #clients_name > 0 then
-                        return table.concat(clients_name, ",")
-                    end
-                    return msg
-                end,
+                -- function()
+                --     local msg = "No Active Lsp"
+                --     local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+                --     -- local clients = vim.lsp.get_active_clients()
+                --     local clients = vim.lsp.get_clients()
+                --     if next(clients) == nil then
+                --         return msg
+                --     end
+                --     local clients_name = {}
+                --     for _, client in ipairs(clients) do
+                --         local filetypes = client.config.filetypes
+                --         if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                --             -- return "LSP"
+                --             -- return client.name
+                --             table.insert(clients_name, client.name)
+                --         end
+                --     end
+                --     if #clients_name > 0 then
+                --         return table.concat(clients_name, ",")
+                --     end
+                --     return msg
+                -- end,
+                'lsp_status',
 
                 icon = " ",
             },
@@ -97,8 +99,8 @@ lualine.setup({
                     local current_col = vim.fn.virtcol('.')              -- 当前列, 视觉列，按照显示统计，而非字符数
                     local percent = math.floor((current_line / total_lines) * 100) -- 百分比
 
-                    -- 格式化显示为：68% :677/994☰ ℅:3 %d%%
-                    return string.format("%2d%%%% :%d/%d☰℅:%d", percent, current_line, total_lines, current_col)
+                    -- 格式化显示为：83% :101/121 :7
+                    return string.format("%2d%%%% :%d/%d :%d", percent, current_line, total_lines, current_col)
                 end,
                 -- icon = '📜' -- 可选图标，可以根据需要调整
             }
