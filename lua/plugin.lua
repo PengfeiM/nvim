@@ -284,26 +284,26 @@ require("lazy").setup({
             local lsp_attached = false
 
             local function try_load()
-            if inserted and lsp_attached then
-                require("lazy").load({ plugins = { "lsp_signature.nvim" } })
-            end
+                if inserted and lsp_attached then
+                    require("lazy").load({ plugins = { "lsp_signature.nvim" } })
+                end
             end
 
             vim.api.nvim_create_autocmd("InsertEnter", {
-            once = true,
-            callback = function()
-                inserted = true
-                try_load()
-            end,
+                once = true,
+                callback = function()
+                    inserted = true
+                    try_load()
+                end,
             })
 
             vim.api.nvim_create_autocmd("LspAttach", {
-            callback = function(args)
-                if args.buf == vim.api.nvim_get_current_buf() then
-                lsp_attached = true
-                try_load()
-                end
-            end,
+                callback = function(args)
+                    if args.buf == vim.api.nvim_get_current_buf() then
+                        lsp_attached = true
+                        try_load()
+                    end
+                end,
             })
         end,
     },
@@ -356,6 +356,8 @@ require("lazy").setup({
     },
     -- blink-ripgrep
 
+    require("plugins-config.sidekick"),
+
     -- --------------------------------------------------
     -- 格式化
     -- null-ls
@@ -371,9 +373,9 @@ require("lazy").setup({
     -- ---------------------------------------------------
     --
     -- 在 lualine 中显示 lsp 状态
-    {
-        'arkav/lualine-lsp-progress',
-    },
+    -- {
+    --     'arkav/lualine-lsp-progress',
+    -- },
     -- ============================================================================================
 
 
