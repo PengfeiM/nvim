@@ -247,7 +247,7 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     -- indent-blankline: 显示缩进
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
+    -- { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
     -- ======================================================
 
 
@@ -354,6 +354,35 @@ require("lazy").setup({
             'xieyonn/blink-cmp-dat-word',
         },
     },
+    {
+        'saghen/blink.indent',
+        --- @module 'blink.indent'
+        --- @type blink.indent.Config
+        -- opts = {},
+    },
+    -- blink-compat -> trea
+    -- {
+    --     "saghen/blink.compat",
+    --     -- use v2.* for blink.cmp v1.*
+    --     version = "2.*",
+    --     -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+    --     lazy = true,
+    --     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+    --     opts = {},
+    -- },
+    -- {
+    --     trae_url,
+    --     -- 去掉dependence中的nvim-cmp
+    --     -- dependencies = {
+    --     --     "hrsh7th/nvim-cmp",
+    --     -- },
+    --     config = function()
+    --         require("trae").setup({})
+    --     end,
+    -- },
+
+
+
     -- blink-ripgrep
 
     require("plugins-config.sidekick"),
