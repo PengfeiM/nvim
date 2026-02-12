@@ -249,7 +249,7 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     -- indent-blankline: 显示缩进
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
+    -- { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
     -- ======================================================
 
 
@@ -355,6 +355,12 @@ require("lazy").setup({
             'xzbdmw/colorful-menu.nvim', -- optional, only makes cmp menu more beautiful
             'xieyonn/blink-cmp-dat-word',
         },
+    },
+    {
+        'saghen/blink.indent',
+        --- @module 'blink.indent'
+        --- @type blink.indent.Config
+        -- opts = {},
     },
     -- blink-compat -> trea
     -- {

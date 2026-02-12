@@ -74,6 +74,7 @@ require("plugins-config.aerial")
 -- nvim-ufo: 配置
 -- require("plugins-config.ufo")
 
+
 -- fzf-lua: 配置
 -- require("plugins-config.fzf-lua")
 require("plugins-config.telescope")
@@ -96,7 +97,7 @@ require("plugins-config.markdown.render_markdown")
 
 
 -- indent blankline
-require("plugins-config.indent-blankline")
+-- require("plugins-config.indent-blankline")
 
 
 -- ------------------------------------------------------
@@ -112,6 +113,7 @@ require("lsp.lsp-signature")
 -- require("lsp.lspkind")
 require("lsp.nvim-autopairs")
 require("lsp.blink")
+require("plugins-config.blink_indent")
 require("lsp.none-ls")
 require("lsp.format.prettier")
 
