@@ -115,6 +115,8 @@ require("lsp.format.prettier")
 
 
 -- ======================================================
+-- which-key
+require("plugins-config.which_key")
 -- ---- diagnostic ----------------------------
 -- require("diagnostic")
 require("plugins-config.tiny-inline-diag")
