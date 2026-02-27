@@ -44,6 +44,7 @@ require("keybinding")
 -- ------------------------------------------------------
 -- nvim-notify: 通知插件
 require("plugins-config.notify")
+require("plugins-config.noice")
 require("plugins-config.fidget")
 
 -- better fFtT, must after treesitter
