@@ -114,7 +114,7 @@
                 gitsigns = true,
                 lsp_saga = true,
                 nvimtree = true,
-                notify = false,
+                notify = true,
             },
         })
     --} 

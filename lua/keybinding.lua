@@ -183,7 +183,7 @@ vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, { desc = "Telescope
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags, { desc = "Telescope help tags" }, opt)
 vim.keymap.set("n", "<leader>fr", telescope_builtin.registers, { desc = "Telescope registers" }, opt)
 vim.keymap.set("n", "<leader>fd", telescope_builtin.diagnostics, { desc = "Telescope diagnostic" }, opt)
-vim.keymap.set("n", "<leader>fp", "<cmd>Telescope neoclip<CR>", { desc = "Telescope neoclip" }, opt)
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope neoclip theme=ivy<CR>", { desc = "Telescope neoclip" }, opt)
 vim.keymap.set("n", "<leader>td", ":TodoTelescope<CR>", opt)
 vim.keymap.set("n", "gs", function()
   telescope_builtin.lsp_document_symbols({
@@ -305,7 +305,7 @@ pluginKeyBinding.lspKeybinding = function(mapbuf)
 	mapbuf("n", "gp", ":Lspsaga peek_definition<CR>", opt)
 	-- 测试 goto 引用，放在 quickfix 中
 	-- vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
-	mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+	-- mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
 	-- 找到接口实现，放在 quickfix 中
 	mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
 	-- open finder for definition and reference
