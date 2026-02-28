@@ -71,6 +71,8 @@ require("lazy").setup({
         }
     },
     -- fidget: better lsp notification
+    -- noice try: disable this one
+    --[[
     {
         "j-hui/fidget.nvim",
         opts = {
@@ -79,6 +81,7 @@ require("lazy").setup({
         lazy = true,
         event = "LspAttach", -- 懒加载方式建议用这个
     },
+    ]]
 
     -- better f,F,t,T
     {
@@ -293,6 +296,7 @@ require("lazy").setup({
         }
     },
     -- lsp-signature
+    --[[
     {
         "ray-x/lsp_signature.nvim",
         -- event = "InsertEnter",
@@ -324,7 +328,7 @@ require("lazy").setup({
             end,
             })
         end,
-    },
+    },]]
 
 
     -- tiny-inline-diagnostic, beautiful diagnostic

@@ -45,7 +45,7 @@ require("keybinding")
 -- nvim-notify: 通知插件
 require("plugins-config.notify")
 require("plugins-config.noice")
-require("plugins-config.fidget")
+-- require("plugins-config.fidget")
 
 -- better fFtT, must after treesitter
 require("plugins-config.eysliner")
@@ -109,7 +109,7 @@ require("plugins-config.lazygit")
 -- ------------------------------------------------------
 require("lsp.mason")
 require("lsp.lspsaga")
-require("lsp.lsp-signature")
+-- require("lsp.lsp-signature")
 -- require("lsp.cmp")
 -- require("lsp.lspkind")
 require("lsp.nvim-autopairs")
