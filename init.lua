@@ -45,7 +45,6 @@ require("keybinding")
 -- nvim-notify: 通知插件
 require("plugins-config.notify")
 require("plugins-config.noice")
--- require("plugins-config.fidget")
 
 -- better fFtT, must after treesitter
 require("plugins-config.eysliner")
@@ -62,43 +61,23 @@ require("plugins-config.nvim-tree")
 -- lualine: 状态栏启动
 require("plugins-config.lualine")
 
--- bufferline: tab 栏启动
--- require("plugins-config.bufferline")
 -- use barbar instead
 require("plugins-config.barbar")
 
--- tagbar：配置
 -- use aerial 
--- require("plugins-config.tagbar")
 require("plugins-config.aerial")
 
--- nvim-ufo: 配置
--- require("plugins-config.ufo")
-
-
--- fzf-lua: 配置
--- require("plugins-config.fzf-lua")
+-- telescope
 require("plugins-config.telescope")
 
 -- nvim-treesitter
 require("plugins-config.nvim-treesitter")
-require("plugins-config.code-folding")      -- 复用 treesitter 能力的代码折叠
+-- require("plugins-config.code-folding")      -- 复用 treesitter 能力的代码折叠, 注释掉试试
 
 -- vim-illuminate
 require("plugins-config.illuminate")
 -- todo-comments
 require("plugins-config.todo-comments")
-
--- rainbow
--- require("plugins-config.rainbow")
-
--- markdown
-require("plugins-config.markdown.markdown-preview")
-require("plugins-config.markdown.render_markdown")
-
-
--- indent blankline
--- require("plugins-config.indent-blankline")
 
 
 -- ------------------------------------------------------
@@ -109,9 +88,6 @@ require("plugins-config.lazygit")
 -- ------------------------------------------------------
 require("lsp.mason")
 require("lsp.lspsaga")
--- require("lsp.lsp-signature")
--- require("lsp.cmp")
--- require("lsp.lspkind")
 require("lsp.nvim-autopairs")
 require("lsp.blink")
 require("plugins-config.blink_indent")

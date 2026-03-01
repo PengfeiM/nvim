@@ -70,18 +70,6 @@ require("lazy").setup({
             "rcarriga/nvim-notify",
         }
     },
-    -- fidget: better lsp notification
-    -- noice try: disable this one
-    --[[
-    {
-        "j-hui/fidget.nvim",
-        opts = {
-            -- options
-        },
-        lazy = true,
-        event = "LspAttach", -- 懒加载方式建议用这个
-    },
-    ]]
 
     -- better f,F,t,T
     {
@@ -191,15 +179,6 @@ require("lazy").setup({
     },
 
     -- -- 顶部文件 tab 插件：bufferline
-    -- {
-    --     'akinsho/bufferline.nvim',
-    --     version = "*",
-    --     dependencies = 'nvim-tree/nvim-web-devicons'
-    -- },
-    -- -- bufferline 协作插件：bufdelete
-    -- {
-    --     'famiu/bufdelete.nvim',
-    -- },
     -- use barbar instead
     {
         'romgrk/barbar.nvim',
@@ -209,10 +188,6 @@ require("lazy").setup({
         },
     },
 
-    -- tagbar：代码大纲查看
-    -- {
-    --     'preservim/tagbar',
-    -- },
     -- aerial: 代替 tagbar 的大纲
     {
         'stevearc/aerial.nvim',
@@ -224,20 +199,6 @@ require("lazy").setup({
         },
     },
 
-    -- nvim-ufo：代码折叠
-    -- {
-    --     'kevinhwang91/nvim-ufo',
-    --     dependencies = 'kevinhwang91/promise-async',
-    -- },
-
-    -- fzf-lua：文件管理插件
-    --[[
-    {
-        "ibhagwan/fzf-lua",
-        -- optional for icon support
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
-    --]]
     -- telescope: nvim version fzf-lua
     {
         'nvim-telescope/telescope.nvim', -- tag = '0.1.8',
@@ -267,8 +228,6 @@ require("lazy").setup({
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
     },
-    -- indent-blankline: 显示缩进
-    -- { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
     -- ======================================================
 
 
@@ -295,41 +254,6 @@ require("lazy").setup({
             'nvim-tree/nvim-web-devicons',     -- optional
         }
     },
-    -- lsp-signature
-    --[[
-    {
-        "ray-x/lsp_signature.nvim",
-        -- event = "InsertEnter",
-        lazy = true,
-        init = function()
-            local inserted = false
-            local lsp_attached = false
-
-            local function try_load()
-            if inserted and lsp_attached then
-                require("lazy").load({ plugins = { "lsp_signature.nvim" } })
-            end
-            end
-
-            vim.api.nvim_create_autocmd("InsertEnter", {
-            once = true,
-            callback = function()
-                inserted = true
-                try_load()
-            end,
-            })
-
-            vim.api.nvim_create_autocmd("LspAttach", {
-            callback = function(args)
-                if args.buf == vim.api.nvim_get_current_buf() then
-                lsp_attached = true
-                try_load()
-                end
-            end,
-            })
-        end,
-    },]]
-
 
     -- tiny-inline-diagnostic, beautiful diagnostic
     {
@@ -341,17 +265,6 @@ require("lazy").setup({
         end,
     },
     -- ---------------------------------------------------
-    -- 自动补全插件, use blink.cmp instead
-    {
-        -- "hrsh7th/vim-vsnip",
-        -- "hrsh7th/cmp-nvim-lsp",
-        -- "hrsh7th/cmp-path",
-        -- "hrsh7th/cmp-vsnip",
-        -- 'hrsh7th/cmp-buffer',
-        -- 'hrsh7th/cmp-cmdline',
-        -- 'hrsh7th/nvim-cmp',
-        -- "mortepau/codicons.nvim",
-    },
     {
         -- 常见片段
         "rafamadriz/friendly-snippets",
@@ -360,10 +273,6 @@ require("lazy").setup({
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
-    },
-    -- beauty 自动补全
-    {
-        -- "onsails/lspkind.nvim",
     },
     -- use blink instead
     -- blink.cmp
@@ -382,28 +291,6 @@ require("lazy").setup({
         --- @type blink.indent.Config
         -- opts = {},
     },
-    -- blink-compat -> trea
-    -- {
-    --     "saghen/blink.compat",
-    --     -- use v2.* for blink.cmp v1.*
-    --     version = "2.*",
-    --     -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-    --     lazy = true,
-    --     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-    --     opts = {},
-    -- },
-    -- {
-    --     trae_url,
-    --     -- 去掉dependence中的nvim-cmp
-    --     -- dependencies = {
-    --     --     "hrsh7th/nvim-cmp",
-    --     -- },
-    --     config = function()
-    --         require("trae").setup({})
-    --     end,
-    -- },
-
-
 
     -- blink-ripgrep
 
@@ -420,11 +307,6 @@ require("lazy").setup({
         'MunifTanjim/prettier.nvim',
     },
     -- ---------------------------------------------------
-    --
-    -- 在 lualine 中显示 lsp 状态
-    -- {
-    --     'arkav/lualine-lsp-progress',
-    -- },
     -- ============================================================================================
 
 
