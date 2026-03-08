@@ -311,6 +311,7 @@ pluginKeyBinding.lspKeybinding = function(mapbuf)
 	-- open finder for definition and reference
 	mapbuf("n", "gf", ":Lspsaga finder<CR>", opt)
 	-- show hover
+    mapbuf('n', 'K', "<cmd>Lspsaga hover_doc<CR>", opt)
 	-- mapbuf("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opt) -- same result as K, remove for now
 	-- show diagnostic in line
 	mapbuf("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
