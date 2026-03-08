@@ -9,8 +9,10 @@ if not status then
 end
 
 r_md.setup({
+	-- Filetypes this plugin will run on.
+	file_types = { "markdown", "noice" },
 	completions = {
 		lsp = { enabled = true },
-		blink = { enabled = false },
+		blink = { enabled = true },
 	},
 })
