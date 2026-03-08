@@ -45,6 +45,8 @@ blink.setup({
         --]]
 		["<C-j>"] = { "select_next", "fallback" },
 		["<C-k>"] = { "select_prev", "fallback" },
+        ['<C-u>'] = { 'scroll_signature_up', 'fallback' },
+        ['<C-d>'] = { 'scroll_signature_down', 'fallback' },
 	},
 	sources = {
 		-- `lsp`, `buffer`, `snippets`, `path` and `omni` are built-in
@@ -70,13 +72,18 @@ blink.setup({
 		},
 	},
 	completion = {
-		documentation = { auto_show = true }, -- 自动显示文档
+		documentation = {
+			auto_show = true,
+			window = {
+				border = "rounded",
+			},
+		}, -- 自动显示文档
 		menu = {
 			border = "rounded",
 			draw = {
 				-- We don't need label_description now because label and label_description are already
 				-- combined together in label by colorful-menu.nvim.
-				columns = { { "kind_icon" }, { "label", gap = 1 }},
+				columns = { { "kind_icon" }, { "label", gap = 1 } },
 				-- columns = { { "kind_icon" }, { "label", gap = 1 }, {"source_name"}}, -- with source name
 				components = {
 					label = {
@@ -102,6 +109,13 @@ blink.setup({
 					return not vim.tbl_contains(disable_filetype, vim.bo.filetype)
 				end,
 			},
+		},
+	},
+	signature = {
+		enabled = true,
+		window = {
+			border = "rounded",
+			show_documentation = true,
 		},
 	},
 	cmdline = {
