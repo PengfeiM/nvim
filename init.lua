@@ -54,6 +54,8 @@ require("plugins-config.eysliner")
 require("plugins-config.nvim-tips")
 -- auto-save: 自动保存
 require("plugins-config.auto-save")
+-- undotree
+require("plugins-config.atone")
 
 -- nvim-tree: 目录插件启动
 require("plugins-config.nvim-tree")
