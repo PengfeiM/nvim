@@ -116,6 +116,11 @@ require("lazy").setup({
             debounce_delay = 0, -- delay after which a pending save is executed
         },
     },
+    -- undo tree
+    {
+        "XXiaoA/atone.nvim",
+        cmd = "Atone",
+    },
 
 
     -- git
