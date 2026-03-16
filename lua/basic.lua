@@ -57,4 +57,4 @@
 --}
 
 -- call some wsl
-require("wsl.clipboard")
+-- require("wsl.clipboard")
