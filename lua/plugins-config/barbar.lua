@@ -7,10 +7,19 @@ end
 vim.g.barbar_auto_setup = false -- disable auto-setup
 
 bar.setup({
+	-- A buffer to this direction will be focused (if it exists) when closing the current buffer.
+	-- Valid options are 'left' (the default), 'previous', and 'right'
+	focus_on_close = "previous",
+
+	-- Disable highlighting alternate buffers
+	highlight_alternate = true,
+
 	-- Set the filetypes which barbar will offset itself for
 	sidebar_filetypes = {
 		NvimTree = true,
 	},
+
+	-- self-define icons
 	icons = {
 		-- Configure the base icons on the bufferline.
 		-- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
@@ -29,5 +38,8 @@ bar.setup({
 			deleted = { enabled = true, icon = "-" },
 		},
 		pinned = { button = "", filename = true },
+
+		-- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
+		-- preset = "default",
 	},
 })
