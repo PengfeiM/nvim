@@ -1,3 +1,10 @@
+-- ================================================================
+-- Leader 键, map leader at very begginning
+-- ----------------------------------------------------------------
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+-- ================================================================
+
 -- 显示配置
 -- {
     -- 样式
@@ -58,3 +65,15 @@
 
 -- call some wsl
 require("wsl.clipboard")
+-- lsp log
+vim.lsp.set_log_level("WARN")
+
+-- trae global 
+--{
+    -- 关闭 trae 内置自动补全
+    vim.g.trae_disable_autocompletion = true
+    -- 关闭 trae 内置 tab 映射
+    vim.g.trae_no_map_tab = true
+    -- 关闭 trae 内置补全映射
+    vim.g.trae_disable_bindings = true
+--}
