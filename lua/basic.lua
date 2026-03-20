@@ -63,7 +63,9 @@ vim.g.maplocalleader = " "
 --}
 
 -- lsp log
-vim.lsp.set_log_level("WARN")
+--{
+    vim.lsp.set_log_level("WARN")
+--}
 
 -- trae global 
 --{

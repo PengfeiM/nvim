@@ -218,8 +218,9 @@ require("lazy").setup({
 
     -- nvim-treesitter: 语法高亮插件
     {
-        'nvim-treesitter/nvim-treesitter',
-        'nvim-treesitter/nvim-treesitter-context',
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-treesitter/nvim-treesitter-context",
+        "nvim-treesitter/nvim-treesitter-textobjects",
     },
     -- vim-illuminate: 语法高亮增强，自动高亮当前变量
     {

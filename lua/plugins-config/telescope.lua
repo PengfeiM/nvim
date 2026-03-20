@@ -64,8 +64,8 @@ else
 			telescope = {
 				i = {
 					select = "<c-y>",
-					-- paste = "<c-p>",
-					paste = "<cr>",
+					paste = "<c-p>",
+					-- paste = "<cr>",
 					-- paste_behind = "<c-P>",
 					paste_behind = nil,
 					replay = "<c-q>", -- replay a macro
@@ -77,7 +77,7 @@ else
 					select = "y",
 					-- paste = "p",
 					--- It is possible to map to more than one key.
-					paste = { "p", "<cr>" },
+					paste = { "p" },
 					paste_behind = "P",
 					replay = "q",
 					delete = "d",

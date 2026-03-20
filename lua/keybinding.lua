@@ -176,7 +176,7 @@ vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, { desc = "Telescope
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags, { desc = "Telescope help tags" }, opt)
 vim.keymap.set("n", "<leader>fr", telescope_builtin.registers, { desc = "Telescope registers" }, opt)
 vim.keymap.set("n", "<leader>fd", telescope_builtin.diagnostics, { desc = "Telescope diagnostic" }, opt)
-vim.keymap.set("n", "<leader>fp", "<cmd>Telescope neoclip theme=ivy<CR>", { desc = "Telescope neoclip" }, opt)
+vim.keymap.set({ "n", "v" }, "<leader>fp", "<cmd>Telescope neoclip theme=ivy<CR>", { desc = "Telescope neoclip" }, opt)
 vim.keymap.set("n", "<leader>td", ":TodoTelescope<CR>", opt)
 vim.keymap.set("n", "gs", function()
   telescope_builtin.lsp_document_symbols({
