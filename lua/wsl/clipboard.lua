@@ -46,7 +46,7 @@ if vim.fn.executable("xclip") == 1 then
 		},
 		cache_enabled = false,
 	}
-	vim.o.clipboard = "unnamedplus"
+	-- vim.o.clipboard = "unnamedplus"
 	print("Clipboard: using xclip")
 elseif vim.fn.executable("xsel") == 1 then
 	vim.g.clipboard = {
@@ -61,7 +61,7 @@ elseif vim.fn.executable("xsel") == 1 then
 		},
 		cache_enabled = false,
 	}
-	vim.o.clipboard = "unnamedplus"
+	-- vim.o.clipboard = "unnamedplus"
 	print("Clipboard: using xsel")
 else
 	print("Please install xclip or xsel for clipboard support")
