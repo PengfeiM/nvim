@@ -20,6 +20,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- 通用插件
     -- =======================================================
+    -- dashboard
+    {
+        "goolord/alpha-nvim",
+        -- dependencies = { 'nvim-mini/mini.icons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons', 'nvim-lua/plenary.nvim' },
+    },
     -- themes, 主题
     {
         "scottmckendry/cyberdream.nvim",

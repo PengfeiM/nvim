@@ -28,6 +28,7 @@ vim.o.updatetime = 500 -- 将光标停留触发的时间设置为 500 毫秒
 -- ------------------------------------------------------
 require("basic")
 require("plugin")
+require("dashboard.alpha")
 require("theme")
 -- 全局变量
 -- 依赖lazy管理插件，需要放到插件require("plugin")后
@@ -100,6 +101,9 @@ require("lsp.format.prettier")
 --  markdown
 require("plugins-config.markdown.render_markdown")
 
+-- ======================================================
+-- translation
+require("plugins-config.babel")
 -- ======================================================
 -- which-key
 require("plugins-config.which_key")
