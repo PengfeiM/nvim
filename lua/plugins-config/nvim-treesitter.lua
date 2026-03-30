@@ -6,7 +6,9 @@ if not status then
 end
 
 
+-- deprecated
 -- 配置
+--[[
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
     ensure_installed = {
@@ -92,5 +94,34 @@ parser_config.gotmpl = {
     filetype = "gotmpl",
     used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml", "tpl" },
 }
+]]
+
+nvim_treesitter.install({
+        "bash",
+        "c",
+        "cmake",
+        "cpp",
+        "go",
+        "gomod",
+        "gosum",
+        "gotmpl",
+        "gowork",
+        "jinja",
+        "json",
+        "latex",
+        "lua",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "promql",
+        "proto",
+        "python",
+        "rust",
+        "sql",
+        "toml",
+        "vim",
+        "vimdoc",
+        "yaml",
+})
 
 nvim_treesitter.setup({})

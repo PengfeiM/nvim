@@ -224,7 +224,11 @@ require("lazy").setup({
 
     -- nvim-treesitter: 语法高亮插件
     {
-        "nvim-treesitter/nvim-treesitter",
+        {
+            "nvim-treesitter/nvim-treesitter",
+            branch = "main",
+            build = ":TSUpdate",
+        },
         "nvim-treesitter/nvim-treesitter-context",
         "nvim-treesitter/nvim-treesitter-textobjects",
     },
