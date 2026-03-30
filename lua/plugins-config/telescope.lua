@@ -22,7 +22,7 @@ telescope.setup({
 telescope.load_extension("fzf")
 telescope.load_extension("ui-select")
 -- optional extensions
-telescope.load_extension("goimpl")
+-- telescope.load_extension("goimpl")
 -- try load neoclip
 local neoclip_exist, neoclip = pcall(require, "neoclip")
 if not neoclip_exist then
