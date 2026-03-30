@@ -67,7 +67,9 @@ vim.g.maplocalleader = " "
 require("wsl.clipboard")
 -- lsp log
 --{
-    vim.lsp.set_log_level("WARN")
+    -- deprecated
+    -- vim.lsp.set_log_level("WARN")
+    vim.lsp.log.set_level("WARN")
 --}
 
 -- trae global 
