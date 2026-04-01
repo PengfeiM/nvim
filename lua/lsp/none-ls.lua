@@ -8,8 +8,8 @@ local formatting = null_ls.builtins.formatting
 
 local function set_indentation(filetype)
     if filetype == "json" then
-        vim.bo.shiftwidth = 4
-        vim.bo.tabstop = 4
+        vim.bo.shiftwidth = 2
+        vim.bo.tabstop = 2
     end
 
     -- if filetype == "yaml" then
@@ -68,8 +68,8 @@ null_ls.setup({
 	-- 	--	vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format{ async = true}")
 	-- 	-- end
 	-- end,
-    -- on_attach = function(client, bufnr)
-    --     local filetype = vim.bo.filetype
-    --     set_indentation(filetype)
-    -- end,
+    on_attach = function(client, bufnr)
+        local filetype = vim.bo.filetype
+        set_indentation(filetype)
+    end,
 })
