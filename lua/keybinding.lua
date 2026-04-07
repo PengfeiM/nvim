@@ -119,7 +119,11 @@ vim.keymap.set("n", "<leader>bsw", "<Cmd>BufferOrderByWindowNumber<CR>", opt)
 -- tagbar 快捷键
 -- vim.keymap.set("n", "<Leader>tl", ":TagbarToggle<CR>", opt)
 -- aerial 快捷键，代替 tagbar
-vim.keymap.set("n", "<leader>tl", "<cmd>AerialToggle!<CR>")
+vim.keymap.set("n", "<leader>st", "<cmd>AerialToggle!<CR>", opt)
+vim.keymap.set("n", "<leader>sn", "<cmd>AerialNavToggle<CR>", opt)
+-- Jump forwards/backwards with '{' and '}'
+vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", opt)
+vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", opt)
 
 -- fzf-lua 快捷键
 -- require("fzf-lua")
