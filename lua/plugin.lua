@@ -217,8 +217,8 @@ require("lazy").setup({
             'nvim-telescope/telescope-ui-select.nvim',
             -- optional
             "AckslD/nvim-neoclip.lua",
-            -- 'edolphin-ydf/goimpl.nvim',
-            "PengfeiM/goimpl.nvim"
+            'edolphin-ydf/goimpl.nvim',
+            -- "PengfeiM/goimpl.nvim"
         }
     },
 
