@@ -17,6 +17,9 @@ return {
 			},
 		},
 	},
+    -- preferred picker for selecting files
+    ---@alias sidekick.picker "snacks"|"telescope"|"fzf-lua"
+    picker = "telescope", ---@type sidekick.picker
 	keys = {
 		--[[
 		{
