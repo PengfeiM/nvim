@@ -72,6 +72,13 @@ require("wsl.clipboard")
     vim.lsp.log.set_level("WARN")
 --}
 
+-- for nvim-tree
+--{
+    -- disable netrw at the very start of your init.lua
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+--}
+
 -- trae global 
 --{
     -- 关闭 trae 内置自动补全
