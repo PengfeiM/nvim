@@ -46,8 +46,8 @@ vim.api.nvim_set_keymap("v", "<Leader>p", '"+p', opt) -- 视觉模式
 local pluginKeyBinding = {}
 
 -- nvim-tree 快捷键
-vim.keymap.set({ "n", "v" }, "<Leader>nt", ":NvimTreeToggle<CR>")
-vim.keymap.set({ "n", "v" }, "<Leader>nf", ":NvimTreeFindFile<CR>")
+vim.keymap.set({ "n", "v" }, "<Leader>nt", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set({ "n", "v" }, "<Leader>nf", "<cmd>NvimTreeFindFile<CR>")
 pluginKeyBinding.nvim_tree = {
 	--{ key = "r", action = "refresh" },
 }
