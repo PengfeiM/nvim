@@ -90,6 +90,31 @@ lualine.setup({
 		-- lualine_y = {'selectioncount', 'searchcount'},
 		lualine_y = {
 			{
+				function()
+					local ok, status = pcall(require, "sidekick.status")
+					if ok then
+						local cli_status = status.cli()
+						if #cli_status > 0 then
+							local s = cli_status[1]
+							local text = " "
+							if s.mux_session then
+								text = text .. "[" .. (s.mux_backend or "tmux") .. ":" .. s.mux_session .. "]"
+							end
+							if #cli_status > 1 then
+								text = text .. " (+" .. (#cli_status - 1) .. ")"
+							end
+							return text
+						end
+					end
+					return ""
+				end,
+				cond = function()
+					local ok, status = pcall(require, "sidekick.status")
+					return ok and #status.cli() > 0
+				end,
+				color = { fg = "#7aa2f7" },
+			},
+			{
 				"lsp_status",
 				icon = "󱙝",
 			},
