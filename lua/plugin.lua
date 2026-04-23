@@ -295,6 +295,7 @@ require("lazy").setup({
         version = "*", -- 最新稳定版
         dependencies = {
             'rafamadriz/friendly-snippets',
+            "L3MON4D3/LuaSnip", -- snippets engine
             'xzbdmw/colorful-menu.nvim', -- optional, only makes cmp menu more beautiful
             'xieyonn/blink-cmp-dat-word',
         },
