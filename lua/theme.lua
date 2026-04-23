@@ -4,7 +4,7 @@
     -- 自定义一些配色
     -- ---------------------------------------------------------------------
     -- 引用 dracula 颜色
-    local dracula_colors = require('dracula').colors()
+    -- local dracula_colors = require('dracula').colors()
 
     local custom_colors = {
         dark_cyan = "#4ACDDA",
@@ -42,6 +42,7 @@
     -- =====================================================================
 
     -- cyberdream 主题配置
+    --[[
     -- {
         require("cyberdream").setup({
             -- 透明色
@@ -61,9 +62,10 @@
                 CurSearch = { fg = cyberdream_colors.bgAlt, bg = cyberdream_colors.cyan, bold = true },
             },
         })
-    -- }
+    -- }]]
 
     -- dracula 主题配置
+    --[[
     -- {
         require("dracula").setup({
             -- 透明背景
@@ -73,7 +75,7 @@
             -- show the '~' characters after the end of buffers
             show_end_of_buffer = true, -- default false
         })
-    --}
+    --}]]
     -- catppuccin config
     --{
         require("catppuccin").setup({
@@ -119,6 +121,7 @@
         })
     --} 
     -- tokyo night
+    --[[
     --{
         require("tokyonight").setup({
             transparent = true, -- Enable this to disable setting the background color
@@ -137,8 +140,9 @@
             -- sidebars = { "aerial", "NvimTree" },
             lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
         })
-    --}
+    --}]]
     -- onedark pro
+    --[[
     --{
         require("onedarkpro").setup({
             colors = {}, -- Override default colors or create your own
@@ -236,7 +240,7 @@
                 highlight_inactive_windows = true, -- When the window is out of focus, change the normal background?
             }
         })
-    --}
+    --}]]
 --}
 -- }
 -- 主题选择

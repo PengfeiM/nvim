@@ -27,34 +27,34 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons', 'nvim-lua/plenary.nvim' },
     },
     -- themes, 主题
-    {
-        "scottmckendry/cyberdream.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "Mofiqul/dracula.nvim",
-        name = "dracula",
-        lazy = false,
-        priority = 1000,
-    },
+    -- {
+    --     "scottmckendry/cyberdream.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    -- },
+    -- {
+    --     "Mofiqul/dracula.nvim",
+    --     name = "dracula",
+    --     lazy = false,
+    --     priority = 1000,
+    -- },
     {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
     },
-    {
-        -- tokyonight
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
-    {
-        -- onedarkpro
-        "olimorris/onedarkpro.nvim",
-        priority = 1000, -- Ensure it loads first
-    },
+    -- {
+    --     -- tokyonight
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
+    -- },
+    -- {
+    --     -- onedarkpro
+    --     "olimorris/onedarkpro.nvim",
+    --     priority = 1000, -- Ensure it loads first
+    -- },
 
     -- nvim-notify: 自定义通知插件
     {
