@@ -45,8 +45,11 @@ blink.setup({
         --]]
 		["<C-j>"] = { "select_next", "fallback" },
 		["<C-k>"] = { "select_prev", "fallback" },
-        ['<C-u>'] = { 'scroll_signature_up', 'fallback' },
-        ['<C-d>'] = { 'scroll_signature_down', 'fallback' },
+		["<C-u>"] = { "scroll_signature_up", "fallback" },
+		["<C-d>"] = { "scroll_signature_down", "fallback" },
+	},
+	snippets = {
+		preset = "luasnip",
 	},
 	sources = {
 		-- `lsp`, `buffer`, `snippets`, `path` and `omni` are built-in
