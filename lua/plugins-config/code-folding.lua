@@ -2,7 +2,8 @@
 
 -- 设置折叠方式为 Treesitter
 vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+-- vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.api.nvim_create_autocmd("FileType", {
     -- use indent as folding method in python
     pattern = { "python" },
