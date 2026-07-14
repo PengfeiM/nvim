@@ -17,6 +17,7 @@ lsp installed by Mason
     ◍ ruff, py linter, formater
     ◍ stylua
     ◍ taplo
+    ◍ ty
     ◍ yaml-language-server yamlls
 
 ```
