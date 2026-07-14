@@ -195,8 +195,9 @@ require("lsp.gopls")
 
 -- python
 -- require("lsp.pylsp")
-require("lsp.basedpyright")
+-- require("lsp.basedpyright")
 require("lsp.ruff")
+require("lsp.ty")
 
 -- 引用 clangd.lua，配置 clangd
 require("lsp.clangd")
