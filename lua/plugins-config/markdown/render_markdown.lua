@@ -9,6 +9,12 @@ if not status then
 end
 
 r_md.setup({
+	-- Pre configured settings that will attempt to mimic various target user experiences.
+	-- User provided settings will take precedence.
+	-- | obsidian | mimic Obsidian UI                                          |
+	-- | lazy     | will attempt to stay up to date with LazyVim configuration |
+	-- | none     | does nothing                                               |
+	preset = "obsidian",
 	-- Filetypes this plugin will run on.
 	file_types = { "markdown", "noice" },
 	completions = {

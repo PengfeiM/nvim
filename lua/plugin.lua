@@ -340,13 +340,17 @@ require("lazy").setup({
     -- ---------------------------------------------------
     -- markdown-preview: markdown 预览
     {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        'brianhuster/live-preview.nvim',
         ft = { "markdown" }, -- 仅在 markdown 文件中加载
-        build = "cd app && yarn install",
+        dependencies = {
+            -- You can choose one of the following pickers
+            'nvim-telescope/telescope.nvim',
+            -- 'ibhagwan/fzf-lua',
+            -- 'echasnovski/mini.pick',
+            -- 'folke/snacks.nvim',
+        },
         config = function()
-            -- 仅在 md 文件中启用对应的快捷键
-            require("plugins-config.markdown.keybinding").markdown_preview_keymaps(0)
+            -- keymaps now in after/ftplugin/markdown.lua (applied per-buffer)
         end,
     },
     -- markdown render inside nvim
