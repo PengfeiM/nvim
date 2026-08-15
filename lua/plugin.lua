@@ -129,6 +129,9 @@ require("lazy").setup({
         cmd = "Atone",
     },
 
+    -- advanced C-a, C-x
+    require("plugins-config.dial"),
+
 
     -- git
     -- =======================================================
