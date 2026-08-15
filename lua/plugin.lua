@@ -77,6 +77,9 @@ require("lazy").setup({
         'jinh0/eyeliner.nvim',
     },
 
+    -- modes marker
+    require("plugins-config.modes"),
+
     {
         "saxon1964/neovim-tips",
         version = "*", -- Only update on tagged releases
