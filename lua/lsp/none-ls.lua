@@ -6,7 +6,7 @@ end
 
 local formatting = null_ls.builtins.formatting
 
-local indent_2_file_types = { "json", "jsonc" }
+local indent_2_file_types = { "json", "jsonc", "yaml", "yml" }
 
 local function set_indentation(filetype)
 	if vim.tbl_contains(indent_2_file_types, filetype) then

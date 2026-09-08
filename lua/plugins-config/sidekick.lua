@@ -17,9 +17,9 @@ return {
 			},
 		},
 	},
-    -- preferred picker for selecting files
-    ---@alias sidekick.picker "snacks"|"telescope"|"fzf-lua"
-    picker = "telescope", ---@type sidekick.picker
+	-- preferred picker for selecting files
+	---@alias sidekick.picker "snacks"|"telescope"|"fzf-lua"
+	picker = "telescope", ---@type sidekick.picker
 	keys = {
 		--[[
 		{
@@ -104,5 +104,12 @@ return {
 			end,
 			desc = "Sidekick Toggle Coco, aka trae-cli",
 		},
+        {
+            "<leader>ao",
+            function ()
+				require("sidekick.cli").toggle({ name = "opencode", focus = true })
+            end,
+            desc = "Sidekick Toggle OpenCode",
+        },
 	},
 }

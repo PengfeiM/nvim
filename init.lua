@@ -102,10 +102,6 @@ require("lsp.format.prettier")
 --  markdown
 require("plugins-config.markdown.render_markdown")
 
--- ======================================================
--- translation
-require("plugins-config.babel")
--- ======================================================
 -- which-key
 require("plugins-config.which_key")
 -- ---- diagnostic ----------------------------

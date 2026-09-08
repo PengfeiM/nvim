@@ -42,7 +42,7 @@ aerial.setup({
 	nav = {
 		-- Show a preview of the code in the right column, when there are no child symbols
         -- disable preview for performance
-		-- preview = true,
+		preview = true,
 		keymaps = {
             -- more way to exit
 			["<C-c>"] = "actions.close",
