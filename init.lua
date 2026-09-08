@@ -49,7 +49,7 @@ require("plugins-config.noice")
 
 -- better fFtT, must after treesitter
 require("plugins-config.eysliner")
-
+require("plugins-config.modes")
 
 -- useful plugin to help me get hands on vim
 require("plugins-config.nvim-tips")

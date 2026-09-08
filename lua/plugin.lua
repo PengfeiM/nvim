@@ -79,6 +79,15 @@ require("lazy").setup({
         'jinh0/eyeliner.nvim',
     },
 
+    -- modes hinter
+    {
+        "mvllow/modes.nvim",
+        -- version = "*",
+        -- config = function()
+        --     require("modes").setup()
+        -- end
+    },
+
     {
         "saxon1964/neovim-tips",
         version = "*", -- Only update on tagged releases
