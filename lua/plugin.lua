@@ -88,6 +88,7 @@ require("lazy").setup({
         -- end
     },
 
+    --[[
     {
         "saxon1964/neovim-tips",
         version = "*", -- Only update on tagged releases
@@ -108,6 +109,7 @@ require("lazy").setup({
             bookmark_symbol = "🌟 ",
         },
     },
+    ]]
 
     -- rainbow 括号
     {

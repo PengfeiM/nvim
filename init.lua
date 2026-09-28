@@ -52,7 +52,7 @@ require("plugins-config.eysliner")
 require("plugins-config.modes")
 
 -- useful plugin to help me get hands on vim
-require("plugins-config.nvim-tips")
+-- require("plugins-config.nvim-tips")
 -- auto-save: 自动保存
 require("plugins-config.auto-save")
 -- undotree
