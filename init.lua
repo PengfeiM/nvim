@@ -75,7 +75,7 @@ require("plugins-config.telescope")
 
 -- nvim-treesitter
 require("plugins-config.nvim-treesitter")
-require("plugins-config.code-folding")      -- 复用 treesitter 能力的代码折叠, 注释掉试试
+require("plugins-config.operation.code-folding")      -- 复用 treesitter 能力的代码折叠, 注释掉试试
 
 -- vim-illuminate
 require("plugins-config.illuminate")
